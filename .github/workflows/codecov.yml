@@ -1,2 +1,18 @@
-codecov:
-  token: 07594aaa-7200-43fa-a62a-d924bdc372c1
+name: Code Coverage Action
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+  
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Upload coverage reports to Codecov
+      uses: codecov/codecov-action@v4.0.1
+      with:
+          token: ${{ secrets.CODECOV_TOKEN }}
