@@ -1,24 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   runtest.c                                          :+:      :+:    :+:   */
+/*   node.h                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hsoysal <hsoysal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/26 00:45:31 by hsoysal           #+#    #+#             */
-/*   Updated: 2024/04/26 00:46:09 by hsoysal          ###   ########.fr       */
+/*   Created: 2024/04/25 20:26:29 by hsoysal           #+#    #+#             */
+/*   Updated: 2024/04/25 22:43:49 by hsoysal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "acutest.h"
-#include "structures/test_linked_list.h"
-#include "test_utils.h"
-#include <stdio.h>
+#ifndef NODE_H
+# define NODE_H
 
-// Run TESTs
-TEST_LIST = {
-	//
-	{"Utility", test_utils}, //
-	{"Linked List", test_linked_list},
-	{NULL, NULL} //
-};
+//# include <stdio.h>
+//# include <unistd.h>
+
+typedef struct node
+{
+	void		*content;
+	struct node	*next;
+	struct node	*prev;
+}				t_node;
+
+t_node	*node_create(void *content);
+
+#endif // NODE_H

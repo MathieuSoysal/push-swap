@@ -33,7 +33,7 @@ MERGETEST:
 
 
 RUNTEST: MERGETEST  
-	gcc -g3 -o $(testbuild)/test.out test_TEMP/*.c
+	gcc -g3 -o $(testbuild)/test.out test_TEMP/**/*.c test_TEMP/*.c
 	./$(testbuild)/test.out 
 
 TEST: MERGETEST RUNTEST cleantest

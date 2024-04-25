@@ -1,24 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   runtest.c                                          :+:      :+:    :+:   */
+/*   node.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hsoysal <hsoysal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/26 00:45:31 by hsoysal           #+#    #+#             */
-/*   Updated: 2024/04/26 00:46:09 by hsoysal          ###   ########.fr       */
+/*   Created: 2024/04/25 22:44:04 by hsoysal           #+#    #+#             */
+/*   Updated: 2024/04/26 00:25:33 by hsoysal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "acutest.h"
-#include "structures/test_linked_list.h"
-#include "test_utils.h"
-#include <stdio.h>
+#include "node.h"
+#include <stdlib.h>
 
-// Run TESTs
-TEST_LIST = {
-	//
-	{"Utility", test_utils}, //
-	{"Linked List", test_linked_list},
-	{NULL, NULL} //
-};
+t_node	*node_create(void *content)
+{
+	t_node	*new_node;
+
+	new_node = (t_node *)malloc(sizeof(t_node));
+	if (new_node == NULL)
+		return (NULL);
+	new_node->content = content;
+	new_node->next = NULL;
+	new_node->prev = NULL;
+	return (new_node);
+}

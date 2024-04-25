@@ -1,5 +1,8 @@
 {
     "files.associations": {
-        "utils.h": "c"
+        "*.c": "c",
+        "test_linked_list.h": "c",
+        "linked_list.h": "c",
+        "stdlib.h": "c"
     }
 }
