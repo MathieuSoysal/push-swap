@@ -1,9 +1,9 @@
 
-#ifndef TEST_LINKED_LIST_H
-# define TEST_LINKED_LIST_H
+#ifndef TEST_LINKED_LIST_WITH_NODE_H
+# define TEST_LINKED_LIST_WITH_NODE_H
 
 # include "../../acutest.h"
-# include "linked_list.h"
+# include "linked_list_with_node.h"
 # include <stdio.h>
 
 void	test_linked_list_create(void)
@@ -23,7 +23,7 @@ void	test_linked_list_add_with_null(void)
 
 	list = linked_list_create();
 	node = node_create(NULL);
-	linked_list_add(list, node);
+	linked_list_add_node(list, node);
 	TEST_CHECK(list->head == node);
 	linked_list_free(list, free);
 }
@@ -37,7 +37,7 @@ void	test_linked_list_add(void)
 	data = (int *)malloc(sizeof(int));
 	list = linked_list_create();
 	node = node_create(data);
-	linked_list_add(list, node);
+	linked_list_add_node(list, node);
 	TEST_CHECK(list->head == node);
 	linked_list_free(list, free);
 }
@@ -51,8 +51,8 @@ void	test_linked_list_peak(void)
 	data = (int *)malloc(sizeof(int));
 	list = linked_list_create();
 	node = node_create(data);
-	linked_list_add(list, node);
-	TEST_CHECK(linked_list_peak(list) == node);
+	linked_list_add_node(list, node);
+	TEST_CHECK(linked_list_peak_node(list) == node);
 	linked_list_free(list, free);
 }
 
@@ -65,20 +65,20 @@ void	test_linked_list_pop(void)
 	data = (int *)malloc(sizeof(int));
 	list = linked_list_create();
 	node = node_create(data);
-	linked_list_add(list, node);
-	TEST_CHECK(linked_list_pop(list) == node);
-	TEST_CHECK(linked_list_peak(list) == NULL);
+	linked_list_add_node(list, node);
+	TEST_CHECK(linked_list_pop_node(list) == node);
+	TEST_CHECK(linked_list_peak_node(list) == NULL);
 	linked_list_free(list, free);
 }
 
-void test_linked_list_pop_empty(void)
+void	test_linked_list_pop_empty(void)
 {
 	t_linked_list	*list;
 	t_node			*node;
 
 	list = linked_list_create();
-	TEST_CHECK(linked_list_pop(list) == NULL);
-	TEST_CHECK(linked_list_peak(list) == NULL);
+	TEST_CHECK(linked_list_pop_node(list) == NULL);
+	TEST_CHECK(linked_list_peak_node(list) == NULL);
 	linked_list_free(list, free);
 }
 
@@ -91,4 +91,4 @@ void	test_linked_list(void)
 	test_linked_list_pop();
 }
 
-#endif // TEST_LINKED_LIST_H
+#endif // TEST_LINKED_LIST_WITH_NODE_H

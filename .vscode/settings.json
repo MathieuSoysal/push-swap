@@ -1,9 +1,10 @@
 {
     "files.associations": {
         "*.c": "c",
-        "test_linked_list.h": "c",
-        "linked_list.h": "c",
+        "test_linked_list_with_node.h": "c",
+        "linked_list_with_node.h": "c",
         "stdlib.h": "c",
-        "acutest.h": "c"
+        "acutest.h": "c",
+        "linked_list_with_content.h": "c"
     }
 }
