@@ -6,7 +6,7 @@
 /*   By: hsoysal <hsoysal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/25 20:47:51 by hsoysal           #+#    #+#             */
-/*   Updated: 2024/04/26 18:58:53 by hsoysal          ###   ########.fr       */
+/*   Updated: 2024/04/26 19:19:30 by hsoysal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,11 +45,15 @@ void			linked_list_free(t_linked_list *obj,
 
 /**
  * @brief Return the first element of the linked list
+ * @return The first element of the linked list,
+ * or NULL if the linked list is empty
  */
 t_node			*linked_list_peak(t_linked_list *obj);
 
 /**
  * @brief Remove and return the first element of the linked list
+ * @return The first element of the linked list,
+	or NULL if the linked list is empty
  */
 t_node			*linked_list_pop(t_linked_list *obj);
 

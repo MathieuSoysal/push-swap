@@ -11,7 +11,7 @@
 #ifndef UTILS_H
 # define UTILS_H
 
-# include "structures/linked_list.h"
+# include "structures/linked_list/linked_list.h"
 # include "structures/node.h"
 # include <stdio.h>
 # include <stdlib.h>

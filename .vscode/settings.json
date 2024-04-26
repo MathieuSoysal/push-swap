@@ -3,6 +3,7 @@
         "*.c": "c",
         "test_linked_list.h": "c",
         "linked_list.h": "c",
-        "stdlib.h": "c"
+        "stdlib.h": "c",
+        "acutest.h": "c"
     }
 }

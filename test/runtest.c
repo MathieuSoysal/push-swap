@@ -6,12 +6,12 @@
 /*   By: hsoysal <hsoysal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/26 00:45:31 by hsoysal           #+#    #+#             */
-/*   Updated: 2024/04/26 00:46:09 by hsoysal          ###   ########.fr       */
+/*   Updated: 2024/04/26 19:08:30 by hsoysal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "acutest.h"
-#include "structures/test_linked_list.h"
+#include "structures/linked_list/test_linked_list.h"
 #include "test_utils.h"
 #include <stdio.h>
 
