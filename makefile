@@ -42,7 +42,7 @@ RUNTEST: MERGETEST
 
 TEST: MERGETEST RUNTEST cleantest
 
-TEST_COVERAGE: MERGETEST GCOV cleantest
+TEST_COVERAGE: MERGETEST GCOV
 
 RUN:
 	echo "$(green)Run $(mag) $(outfile)$(reset)"
