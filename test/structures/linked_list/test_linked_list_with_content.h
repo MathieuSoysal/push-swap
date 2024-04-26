@@ -70,6 +70,7 @@ void	test_linked_list_with_content(void)
 	test_linked_list_with_content_add();
 	test_linked_list_with_content_peak();
 	test_linked_list_with_content_pop();
+	test_linked_list_with_content_pop_empty();
 }
 
 #endif // TEST_LINKED_LIST_WITH_CONTENT_H
