@@ -6,14 +6,14 @@
 /*   By: hsoysal <hsoysal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/25 20:54:43 by hsoysal           #+#    #+#             */
-/*   Updated: 2024/04/25 22:30:16 by hsoysal          ###   ########.fr       */
+/*   Updated: 2024/04/26 18:59:58 by hsoysal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "linked_list.h"
 #include <stdlib.h>
 
-void	linked_list_add_at_head(t_linked_list *obj, t_node *new_node)
+void	linked_list_add(t_linked_list *obj, t_node *new_node)
 {
 	t_node	*temp;
 
@@ -29,42 +29,46 @@ void	linked_list_add_at_head(t_linked_list *obj, t_node *new_node)
 	}
 }
 
-void	linked_list_add_at_tail(t_linked_list *obj, t_node *new_node)
+t_node	*linked_list_peak(t_linked_list *obj)
 {
-	t_node	*current;
-
-	current = obj->head;
-	if (obj->head == NULL)
-		linked_list_add_at_head(obj, new_node);
-	else
-	{
-		while (current->next != NULL)
-			current = current->next;
-		current->next = new_node;
-	}
+	return (obj->head);
 }
 
-void	linked_list_add_at_index(t_linked_list *obj, int index,
-		t_node *new_node)
+t_node	*linked_list_pop(t_linked_list *obj)
+{
+	t_node	*temp;
+
+	if (obj->head == NULL)
+		return (NULL);
+	temp = obj->head;
+	obj->head = obj->head->next;
+	return (temp);
+}
+
+t_linked_list	*linked_list_create(void)
+{
+	t_linked_list	*new_list;
+
+	new_list = (t_linked_list *)malloc(sizeof(t_linked_list));
+	if (new_list == NULL)
+		return (NULL);
+	new_list->head = NULL;
+	return (new_list);
+}
+
+void	linked_list_free(t_linked_list *obj, void (*free_content)(void *))
 {
 	t_node	*current;
+	t_node	*temp;
 
 	current = obj->head;
-	if (index == 0)
-		linked_list_add_at_head(obj, new_node);
-	else
+	while (current != NULL)
 	{
-		if (current != NULL)
-		{
-			while (--index > 0)
-			{
-				if (current->next != NULL)
-					current = current->next;
-				else
-					return ;
-			}
-			new_node->next = current->next;
-			current->next = new_node;
-		}
+		temp = current;
+		current = current->next;
+		if (free_content != NULL)
+			free_content(temp->content);
+		free(temp);
 	}
+	free(obj);
 }

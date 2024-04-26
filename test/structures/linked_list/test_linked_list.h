@@ -2,7 +2,7 @@
 #ifndef TEST_LINKED_LIST_H
 # define TEST_LINKED_LIST_H
 
-# include "../acutest.h"
+# include "../../acutest.h"
 # include "linked_list.h"
 # include <stdio.h>
 
@@ -24,7 +24,7 @@ void	test_linked_list_add_at_head_with_null(void)
 
 	list = linked_list_create();
 	node = node_create(NULL);
-	linked_list_add_at_head(list, node);
+	linked_list_add(list, node);
 	TEST_CHECK(list->head == node);
 	linked_list_free(list, free);
 }
@@ -38,7 +38,7 @@ void	test_linked_list_add_at_head(void)
 	data = (int *)malloc(sizeof(int));
 	list = linked_list_create();
 	node = node_create(data);
-	linked_list_add_at_head(list, node);
+	linked_list_add(list, node);
 	TEST_CHECK(list->head == node);
 	linked_list_free(list, free);
 }
