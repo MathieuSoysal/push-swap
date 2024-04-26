@@ -6,7 +6,7 @@
 /*   By: hsoysal <hsoysal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/25 20:26:29 by hsoysal           #+#    #+#             */
-/*   Updated: 2024/04/25 22:43:49 by hsoysal          ###   ########.fr       */
+/*   Updated: 2024/04/26 20:03:08 by hsoysal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,6 @@ typedef struct node
 	struct node	*prev;
 }				t_node;
 
-t_node	*node_create(void *content);
+t_node			*node_create(void *content);
 
 #endif // NODE_H

@@ -5,11 +5,12 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: hsoysal <hsoysal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/26 19:29:06 by hsoysal           #+#    #+#             */
-/*   Updated: 2024/04/26 19:33:48 by hsoysal          ###   ########.fr       */
+/*   Created: 2024/04/26 20:02:42 by hsoysal           #+#    #+#             */
+/*   Updated: 2024/04/26 20:08:01 by hsoysal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "linked_list_essentials.h"
 #include "linked_list_with_node.h"
 
 t_linked_list	*linked_list_create(void)
@@ -38,4 +39,18 @@ void	linked_list_free(t_linked_list *obj, void (*free_content)(void *))
 		free(temp);
 	}
 	free(obj);
+}
+
+void	linked_list_remove_head(t_linked_list *obj,
+		void (*free_content)(void *))
+{
+	t_node	*temp;
+
+	if (obj->head == NULL)
+		return ;
+	temp = obj->head;
+	obj->head = obj->head->next;
+	if (free_content != NULL)
+		free_content(temp->content);
+	free(temp);
 }
