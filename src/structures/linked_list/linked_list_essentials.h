@@ -6,20 +6,18 @@
 /*   By: hsoysal <hsoysal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/26 19:34:59 by hsoysal           #+#    #+#             */
-/*   Updated: 2024/04/26 19:36:21 by hsoysal          ###   ########.fr       */
+/*   Updated: 2024/04/26 19:49:27 by hsoysal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
 
 #ifndef LINKED_LIST_ESSENTIALS_H
 # define LINKED_LIST_ESSENTIALS_H
 
-//# include <stdio.h>
-//# include <unistd.h>
+# include "../node.h"
 
 typedef struct linked_list
 {
-	struct node	*head;
+	t_node		*head;
 }				t_linked_list;
 
 /**

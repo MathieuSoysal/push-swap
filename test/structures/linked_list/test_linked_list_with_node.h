@@ -6,7 +6,7 @@
 # include "linked_list_with_node.h"
 # include <stdio.h>
 
-void	test_linked_list_create(void)
+void	test_linked_list_with_node_create(void)
 {
 	t_linked_list	*list;
 
@@ -15,7 +15,7 @@ void	test_linked_list_create(void)
 	linked_list_free(list, free);
 }
 
-void	test_linked_list_add_with_null(void)
+void	test_linked_list_with_node_add_with_null(void)
 {
 	t_linked_list	*list;
 	t_node			*node;
@@ -28,7 +28,7 @@ void	test_linked_list_add_with_null(void)
 	linked_list_free(list, free);
 }
 
-void	test_linked_list_add(void)
+void	test_linked_list_with_node_add(void)
 {
 	t_linked_list	*list;
 	t_node			*node;
@@ -42,7 +42,7 @@ void	test_linked_list_add(void)
 	linked_list_free(list, free);
 }
 
-void	test_linked_list_peak(void)
+void	test_linked_list_with_node_peak(void)
 {
 	t_linked_list	*list;
 	t_node			*node;
@@ -56,7 +56,7 @@ void	test_linked_list_peak(void)
 	linked_list_free(list, free);
 }
 
-void	test_linked_list_pop(void)
+void	test_linked_list_with_node_pop(void)
 {
 	t_linked_list	*list;
 	t_node			*node;
@@ -71,7 +71,7 @@ void	test_linked_list_pop(void)
 	linked_list_free(list, free);
 }
 
-void	test_linked_list_pop_empty(void)
+void	test_linked_list_with_node_pop_empty(void)
 {
 	t_linked_list	*list;
 	t_node			*node;
@@ -82,13 +82,13 @@ void	test_linked_list_pop_empty(void)
 	linked_list_free(list, free);
 }
 
-void	test_linked_list(void)
+void	test_linked_list_with_node(void)
 {
-	test_linked_list_create();
-	test_linked_list_add_with_null();
-	test_linked_list_add();
-	test_linked_list_peak();
-	test_linked_list_pop();
+	test_linked_list_with_node_create();
+	test_linked_list_with_node_add_with_null();
+	test_linked_list_with_node_add();
+	test_linked_list_with_node_peak();
+	test_linked_list_with_node_pop();
 }
 
 #endif // TEST_LINKED_LIST_WITH_NODE_H
