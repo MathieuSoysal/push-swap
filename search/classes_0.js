@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['linked_5flist_0',['linked_list',['../structlinked__list.html',1,'']]]
+  ['double_5flinked_5flist_0',['double_linked_list',['../structdouble__linked__list.html',1,'']]]
 ];
