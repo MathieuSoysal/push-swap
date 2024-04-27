@@ -6,12 +6,13 @@
 /*   By: hsoysal <hsoysal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/26 00:45:31 by hsoysal           #+#    #+#             */
-/*   Updated: 2024/04/27 18:23:56 by hsoysal          ###   ########.fr       */
+/*   Updated: 2024/04/27 18:47:42 by hsoysal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "acutest.h"
 #include "structures/circle_linked_list/test_circle_linked_list_essentials.h"
+#include "structures/circle_linked_list/test_circle_linked_list_head.h"
 #include "structures/double_linked_list/test_double_linked_list_essentials.h"
 #include "structures/double_linked_list/test_double_linked_list_head.h"
 #include "structures/double_linked_list/test_double_linked_list_tail.h"
@@ -30,5 +31,6 @@ TEST_LIST = {
 	{"Double Linked List Head", test_double_linked_list_head},
 	{"Double Linked List Tail", test_double_linked_list_tail},
 	{"Circle Linked List Essentials", test_circle_linked_list_essentials},
+	{"Circle Linked List Head", test_circle_linked_list_head},
 	{NULL, NULL} //
 };
