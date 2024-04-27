@@ -5,6 +5,7 @@
         "linked_list_with_node.h": "c",
         "stdlib.h": "c",
         "acutest.h": "c",
-        "linked_list_with_content.h": "c"
+        "linked_list_with_content.h": "c",
+        "circle_linked_list_essentials.h": "c"
     }
 }
