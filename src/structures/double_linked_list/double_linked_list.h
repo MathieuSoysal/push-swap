@@ -6,7 +6,7 @@
 /*   By: hsoysal <hsoysal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/26 20:46:38 by hsoysal           #+#    #+#             */
-/*   Updated: 2024/04/27 14:15:48 by hsoysal          ###   ########.fr       */
+/*   Updated: 2024/04/27 18:28:48 by hsoysal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,14 +28,14 @@ void	double_linked_list_add_first(t_double_linked_list *obj,
  * @return The first content of the linked list,
  * or NULL if the linked list is empty
  */
-void	*double_linked_list_peak_first_content(t_double_linked_list *obj);
+void	*double_linked_list_peak_first(t_double_linked_list *obj);
 
 /**
  * @brief Remove and return the first content of the linked list
  * @return The first content of the linked list,
 	or NULL if the linked list is empty
  */
-void	*double_linked_list_pop_first_content(t_double_linked_list *obj);
+void	*double_linked_list_pop_first(t_double_linked_list *obj);
 
 /**
  * @brief Remove first added element from the double linked list
@@ -51,7 +51,7 @@ void	double_linked_list_remove_first(t_double_linked_list *obj,
  * @param obj The linked list to add the content
  * @param new_content The content to add
  */
-void	double_linked_list_add_last_content(t_double_linked_list *obj,
+void	double_linked_list_add_last(t_double_linked_list *obj,
 			void *new_content);
 
 /**
@@ -59,14 +59,14 @@ void	double_linked_list_add_last_content(t_double_linked_list *obj,
  * @return The last content of the linked list,
  * or NULL if the linked list is empty
  */
-void	*double_linked_list_peak_last_content(t_double_linked_list *obj);
+void	*double_linked_list_peak_last(t_double_linked_list *obj);
 
 /**
  * @brief Remove and return the last content of the linked list
  * @return The last content of the linked list,
 	or NULL if the linked list is empty
  */
-void	*double_linked_list_pop_last_content(t_double_linked_list *obj);
+void	*double_linked_list_pop_last(t_double_linked_list *obj);
 
 /**
  * @brief Remove last added element from the double linked list

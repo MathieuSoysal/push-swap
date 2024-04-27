@@ -43,7 +43,7 @@ void	test_double_linked_list_peak_first_content1(void)
 	list = double_linked_list_create();
 	data = 42;
 	double_linked_list_add_first(list, &data);
-	TEST_CHECK(*(int *)double_linked_list_peak_first_content(list) == 42);
+	TEST_CHECK(*(int *)double_linked_list_peak_first(list) == 42);
 	double_linked_list_free(list, NULL);
 }
 
@@ -58,7 +58,7 @@ void	test_double_linked_list_peak_first_content2(void)
 	double_linked_list_add_first(list, &data);
 	data2 = 21;
 	double_linked_list_add_first(list, &data2);
-	TEST_CHECK(*(int *)double_linked_list_peak_first_content(list) == 21);
+	TEST_CHECK(*(int *)double_linked_list_peak_first(list) == 21);
 	double_linked_list_free(list, NULL);
 }
 
@@ -70,8 +70,8 @@ void	test_double_linked_list_pop_first_content1(void)
 	list = double_linked_list_create();
 	data = 42;
 	double_linked_list_add_first(list, &data);
-	TEST_CHECK(*(int *)double_linked_list_pop_first_content(list) == 42);
-	TEST_CHECK(double_linked_list_peak_first_content(list) == NULL);
+	TEST_CHECK(*(int *)double_linked_list_pop_first(list) == 42);
+	TEST_CHECK(double_linked_list_peak_first(list) == NULL);
 	double_linked_list_free(list, NULL);
 }
 
@@ -86,8 +86,8 @@ void	test_double_linked_list_pop_first_content2(void)
 	double_linked_list_add_first(list, &data);
 	data2 = 21;
 	double_linked_list_add_first(list, &data2);
-	TEST_CHECK(*(int *)double_linked_list_pop_first_content(list) == 21);
-	TEST_CHECK(*(int *)double_linked_list_peak_first_content(list) == 42);
+	TEST_CHECK(*(int *)double_linked_list_pop_first(list) == 21);
+	TEST_CHECK(*(int *)double_linked_list_peak_first(list) == 42);
 	double_linked_list_free(list, NULL);
 }
 

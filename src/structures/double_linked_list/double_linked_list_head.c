@@ -6,7 +6,7 @@
 /*   By: hsoysal <hsoysal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/26 20:47:19 by hsoysal           #+#    #+#             */
-/*   Updated: 2024/04/27 14:20:28 by hsoysal          ###   ########.fr       */
+/*   Updated: 2024/04/27 18:28:32 by hsoysal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,14 +32,14 @@ void	double_linked_list_add_first(t_double_linked_list *obj,
 	obj->size++;
 }
 
-void	*double_linked_list_peak_first_content(t_double_linked_list *obj)
+void	*double_linked_list_peak_first(t_double_linked_list *obj)
 {
 	if (obj->head == NULL)
 		return (NULL);
 	return (obj->head->content);
 }
 
-void	*double_linked_list_pop_first_content(t_double_linked_list *obj)
+void	*double_linked_list_pop_first(t_double_linked_list *obj)
 {
 	t_node	*head;
 	void	*content;

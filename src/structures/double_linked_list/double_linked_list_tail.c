@@ -6,14 +6,14 @@
 /*   By: hsoysal <hsoysal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/27 14:24:39 by hsoysal           #+#    #+#             */
-/*   Updated: 2024/04/27 14:28:42 by hsoysal          ###   ########.fr       */
+/*   Updated: 2024/04/27 18:28:48 by hsoysal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "double_linked_list.h"
 #include <stdlib.h>
 
-void	double_linked_list_add_last_content(t_double_linked_list *obj,
+void	double_linked_list_add_last(t_double_linked_list *obj,
 		void *new_content)
 {
 	t_node	*new_node;
@@ -32,14 +32,14 @@ void	double_linked_list_add_last_content(t_double_linked_list *obj,
 	obj->size++;
 }
 
-void	*double_linked_list_peak_last_content(t_double_linked_list *obj)
+void	*double_linked_list_peak_last(t_double_linked_list *obj)
 {
 	if (obj->tail == NULL)
 		return (NULL);
 	return (obj->tail->content);
 }
 
-void	*double_linked_list_pop_last_content(t_double_linked_list *obj)
+void	*double_linked_list_pop_last(t_double_linked_list *obj)
 {
 	t_node	*tail;
 	void	*content;
