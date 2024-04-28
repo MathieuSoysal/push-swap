@@ -6,7 +6,7 @@
 /*   By: hsoysal <hsoysal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/29 00:51:51 by hsoysal           #+#    #+#             */
-/*   Updated: 2024/04/29 01:22:07 by hsoysal          ###   ########.fr       */
+/*   Updated: 2024/04/29 01:31:50 by hsoysal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -93,6 +93,7 @@ void							rrr(t_push_swap_stacks *stacks);
  * @brief free the stacks of push_swap
  * @param stacks The stacks of push_swap
  */
-void							push_swap_stacks_free(t_push_swap_stacks *stacks);
+void							push_swap_stacks_free(
+									t_push_swap_stacks *stacks);
 
 #endif // PUSH_SWAP_STACK_H
