@@ -1,9 +1,21 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   utils.c                                            :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: hsoysal <hsoysal@student.42.fr>            +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/04/28 19:24:14 by hsoysal           #+#    #+#             */
+/*   Updated: 2024/04/28 19:24:18 by hsoysal          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "utils.h"
 
-//Choose the bigger one
-int argmax(int a, int b){
-    if (a>b)
-        return 0;
-    else 
-        return 1;
+int	argmax(int a, int b)
+{
+	if (a > b)
+		return (0);
+	else
+		return (1);
 }

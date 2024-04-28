@@ -1,13 +1,15 @@
-/**
- * @file utils.h
- * @author Shao-Ting Chiu (r07945001@ntu.edu.tw)
- * @brief General Utilities for C language
- * @version 0.1
- * @date 2021-03-08
- *
- * @copyright Copyright (c) 2021
- *
- */
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   utils.h                                            :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: hsoysal <hsoysal@student.42.fr>            +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/04/28 19:24:25 by hsoysal           #+#    #+#             */
+/*   Updated: 2024/04/28 19:24:38 by hsoysal          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef UTILS_H
 # define UTILS_H
 
@@ -17,7 +19,7 @@
 # include <stdlib.h>
 # include <string.h>
 
-/**
+/**u
  * @brief Argmax function with intergers
  *
  * @param a

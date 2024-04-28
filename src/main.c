@@ -1,15 +1,27 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   main.c                                             :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: hsoysal <hsoysal@student.42.fr>            +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/04/28 19:23:44 by hsoysal           #+#    #+#             */
+/*   Updated: 2024/04/28 19:24:03 by hsoysal          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include "utils.h"
 #include <stdio.h>
 #include <stdlib.h>
-#include <stdio.h>
-#include "utils.h"
 
-int main()
+int	main(void)
 {
-    
-    // newnumc("3434");
-    int a = 1;
-    int b = 3;
-    int ans = argmax(a,b);
+	int	a;
+	int	b;
+	int	ans;
 
-    return 0;
+	a = 1;
+	b = 3;
+	ans = argmax(a, b);
+	return (0);
 }
