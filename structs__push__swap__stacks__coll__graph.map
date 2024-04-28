@@ -1,0 +1,8 @@
+<map id="s_push_swap_stacks" name="s_push_swap_stacks">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,217,153,243"/>
+<area shape="rect" id="Node000002" href="$structdouble__linked__list.html" title="The structure of a double linked list." alt="" coords="17,113,141,139"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="82,155,82,217,76,217,76,155"/>
+<area shape="rect" id="Node000003" href="$structnode.html" title=" " alt="" coords="54,8,104,33"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="82,48,82,113,76,113,76,48"/>
+<area shape="poly" id="edge3_Node000003_Node000003" title=" " alt="" coords="121,9,127,13,130,21,122,31,104,33,104,28,119,26,125,20,123,17,118,14"/>
+</map>
