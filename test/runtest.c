@@ -6,7 +6,7 @@
 /*   By: hsoysal <hsoysal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/26 00:45:31 by hsoysal           #+#    #+#             */
-/*   Updated: 2024/04/29 01:18:15 by hsoysal          ###   ########.fr       */
+/*   Updated: 2024/04/29 01:39:18 by hsoysal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@
 #include "structures/linked_list/test_linked_list_with_content.h"
 #include "structures/linked_list/test_linked_list_with_node.h"
 #include "structures/push_swap_stack/test_push_swap_stack_swaps.h"
+#include "structures/push_swap_stack/test_push_swap_stack_pushs.h"
 #include "test_utils.h"
 #include <stdio.h>
 
@@ -38,5 +39,6 @@ TEST_LIST = {
 	{"Circle Linked List Tail", test_circle_linked_list_tail},
 	{"Circle Linked List Rotation", test_circle_linked_list},
 	{"Push Swap Stack Swaps", test_push_swap_stack_swaps},
+	{"Push Swap Stack Pushs", test_push_swap_stack_pushs},
 	{NULL, NULL} //
 };
