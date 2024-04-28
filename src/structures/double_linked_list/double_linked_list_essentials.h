@@ -6,7 +6,7 @@
 /*   By: hsoysal <hsoysal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/27 13:57:24 by hsoysal           #+#    #+#             */
-/*   Updated: 2024/04/27 14:30:41 by hsoysal          ###   ########.fr       */
+/*   Updated: 2024/04/28 19:22:47 by hsoysal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,6 @@ typedef struct double_linked_list
 	t_node				*tail;
 	unsigned int		size;
 }						t_double_linked_list;
-
 
 /**
  * @brief Create a new linked list, the linked list is LIFO (Last In First Out)

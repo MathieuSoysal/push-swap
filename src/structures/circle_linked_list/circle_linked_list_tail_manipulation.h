@@ -6,10 +6,9 @@
 /*   By: hsoysal <hsoysal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/27 20:01:53 by hsoysal           #+#    #+#             */
-/*   Updated: 2024/04/27 20:02:32 by hsoysal          ###   ########.fr       */
+/*   Updated: 2024/04/28 19:23:09 by hsoysal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
 
 #ifndef CIRCLE_LINKED_LIST_TAIL_MANIPULATION_H
 # define CIRCLE_LINKED_LIST_TAIL_MANIPULATION_H
@@ -44,6 +43,5 @@ void	circle_linked_list_remove_last(t_circle_linked_list *list,
  * @param list The linked list
  */
 void	*circle_linked_list_pop_last(t_circle_linked_list *list);
-
 
 #endif // CIRCLE_LINKED_LIST_TAIL_MANIPULATION_H

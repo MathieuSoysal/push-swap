@@ -6,7 +6,7 @@
 /*   By: hsoysal <hsoysal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/26 00:45:31 by hsoysal           #+#    #+#             */
-/*   Updated: 2024/04/27 20:05:52 by hsoysal          ###   ########.fr       */
+/*   Updated: 2024/04/29 00:10:48 by hsoysal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 #include "structures/circle_linked_list/test_circle_linked_list_essentials.h"
 #include "structures/circle_linked_list/test_circle_linked_list_head.h"
 #include "structures/circle_linked_list/test_circle_linked_list_tail.h"
+#include "structures/circle_linked_list/test_circle_linked_list.h"
 #include "structures/double_linked_list/test_double_linked_list_essentials.h"
 #include "structures/double_linked_list/test_double_linked_list_head.h"
 #include "structures/double_linked_list/test_double_linked_list_tail.h"
@@ -34,5 +35,6 @@ TEST_LIST = {
 	{"Circle Linked List Essentials", test_circle_linked_list_essentials},
 	{"Circle Linked List Head", test_circle_linked_list_head},
 	{"Circle Linked List Tail", test_circle_linked_list_tail},
+	{"Circle Linked List Rotation", test_circle_linked_list},
 	{NULL, NULL} //
 };

@@ -6,7 +6,7 @@
 /*   By: hsoysal <hsoysal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/25 20:54:43 by hsoysal           #+#    #+#             */
-/*   Updated: 2024/04/26 19:42:13 by hsoysal          ###   ########.fr       */
+/*   Updated: 2024/04/28 19:23:27 by hsoysal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,4 +44,3 @@ t_node	*linked_list_pop_node(t_linked_list *obj)
 	obj->head = obj->head->next;
 	return (temp);
 }
-
