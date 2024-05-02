@@ -20,7 +20,7 @@
 	// "forwardPorts": [],
 
 	// Use 'postCreateCommand' to run commands after the container is created.
-	"postCreateCommand": "python3 -m pip install --upgrade pip setuptools & python3 -m pip install norminette"
+	"postCreateCommand": "python3 -m pip install --upgrade pip setuptools & python3 -m pip install norminette & pip3 install c_formatter_42"
 	
 	// Configure tool-specific properties.
 	// "customizations": {},
