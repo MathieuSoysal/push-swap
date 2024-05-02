@@ -6,7 +6,7 @@
 /*   By: hsoysal <hsoysal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/29 01:06:31 by hsoysal           #+#    #+#             */
-/*   Updated: 2024/04/29 01:11:34 by hsoysal          ###   ########.fr       */
+/*   Updated: 2024/05/02 13:01:25 by hsoysal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,10 +19,10 @@ static void	swap(t_stack *stack)
 
 	if (stack->size < 2)
 		return ;
-	first = circle_linked_list_pop_first(stack);
-	second = circle_linked_list_pop_first(stack);
-	circle_linked_list_add_first(stack, first);
-	circle_linked_list_add_first(stack, second);
+	first = stack->head->content;
+	second = stack->head->next->content;
+	stack->head->content = second;
+	stack->head->next->content = first;
 }
 
 void	sa(t_push_swap_stacks *stacks)
