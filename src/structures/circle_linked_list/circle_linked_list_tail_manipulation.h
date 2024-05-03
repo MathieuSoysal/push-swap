@@ -6,7 +6,7 @@
 /*   By: hsoysal <hsoysal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/27 20:01:53 by hsoysal           #+#    #+#             */
-/*   Updated: 2024/04/28 19:23:09 by hsoysal          ###   ########.fr       */
+/*   Updated: 2024/05/03 13:51:01 by hsoysal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,9 @@
  * @brief Add a new node at the last of the linked list
  * @param list The linked list
  * @param content The content of the new node
+ * @return 0 if the node is added, -1 if malloc failed
  */
-void	circle_linked_list_add_last(t_circle_linked_list *list, void *content);
+int		circle_linked_list_add_last(t_circle_linked_list *list, void *content);
 
 /**
  * @brief Get the content of the last element of the linked list

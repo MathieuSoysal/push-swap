@@ -6,7 +6,7 @@
 /*   By: hsoysal <hsoysal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/26 20:46:38 by hsoysal           #+#    #+#             */
-/*   Updated: 2024/04/27 18:28:48 by hsoysal          ###   ########.fr       */
+/*   Updated: 2024/05/03 13:49:27 by hsoysal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,9 @@
  * @brief Add a content at the head of the linked list
  * @param obj The linked list to add the content
  * @param new_content The content to add
+ * @return 0 if the content is added, -1 if malloc failed
  */
-void	double_linked_list_add_first(t_double_linked_list *obj,
+int		double_linked_list_add_first(t_double_linked_list *obj,
 			void *new_content);
 
 /**
@@ -50,8 +51,9 @@ void	double_linked_list_remove_first(t_double_linked_list *obj,
  * @brief Add a content at the tail of the linked list
  * @param obj The linked list to add the content
  * @param new_content The content to add
+ * @return 0 if the content is added, -1 if malloc failed
  */
-void	double_linked_list_add_last(t_double_linked_list *obj,
+int		double_linked_list_add_last(t_double_linked_list *obj,
 			void *new_content);
 
 /**

@@ -6,21 +6,20 @@
 /*   By: hsoysal <hsoysal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/27 14:24:39 by hsoysal           #+#    #+#             */
-/*   Updated: 2024/04/28 18:45:42 by hsoysal          ###   ########.fr       */
+/*   Updated: 2024/05/03 13:49:03 by hsoysal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "double_linked_list.h"
 #include <stdlib.h>
 
-void	double_linked_list_add_last(t_double_linked_list *obj,
-		void *new_content)
+int	double_linked_list_add_last(t_double_linked_list *obj, void *new_content)
 {
 	t_node	*new_node;
 
 	new_node = malloc(sizeof(t_node));
 	if (new_node == NULL)
-		return ;
+		return (-1);
 	new_node->content = new_content;
 	new_node->next = NULL;
 	new_node->prev = obj->tail;
@@ -30,6 +29,7 @@ void	double_linked_list_add_last(t_double_linked_list *obj,
 	if (obj->head == NULL)
 		obj->head = new_node;
 	obj->size++;
+	return (0);
 }
 
 void	*double_linked_list_peak_last(t_double_linked_list *obj)
