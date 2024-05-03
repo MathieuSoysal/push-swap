@@ -6,7 +6,7 @@
 /*   By: hsoysal <hsoysal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/29 00:51:51 by hsoysal           #+#    #+#             */
-/*   Updated: 2024/04/29 01:46:28 by hsoysal          ###   ########.fr       */
+/*   Updated: 2024/05/03 13:54:50 by hsoysal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -99,5 +99,13 @@ void							rrr(t_push_swap_stacks *stacks);
  */
 void							push_swap_stacks_free(
 									t_push_swap_stacks *stacks);
+
+/**
+ * @brief Create the stacks of push_swap, from a list of integers
+ * @param array The list of integers should be in the stack a
+ * @param size The size of the list of integers
+ * @return The stacks of push_swap
+ */
+t_push_swap_stacks				*push_swap_stacks_create(int *array, size_t size);
 
 #endif // PUSH_SWAP_STACK_H
