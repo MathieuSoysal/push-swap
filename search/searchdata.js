@@ -1,7 +1,7 @@
 var indexSectionsWithContent =
 {
   0: "abcdfghilmnoprstuvw",
-  1: "dlns",
+  1: "dns",
   2: "c"
 };
 
