@@ -6,7 +6,7 @@
 /*   By: hsoysal <hsoysal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/29 01:22:37 by hsoysal           #+#    #+#             */
-/*   Updated: 2024/05/03 14:00:56 by hsoysal          ###   ########.fr       */
+/*   Updated: 2024/05/04 17:27:07 by hsoysal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,14 +38,36 @@ static t_push_swap_stacks	*push_swap_stacks_init(void)
 t_push_swap_stacks	*push_swap_stacks_create(int *array, size_t size)
 {
 	t_push_swap_stacks	*stacks;
+	int					*content;
 
 	stacks = push_swap_stacks_init();
 	if (!stacks)
 		return (NULL);
 	while (size--)
-		if (circle_linked_list_add_last(stacks->a, &array[size]) == -1)
+	{
+		content = (int *)malloc(sizeof(int));
+		*content = array[size];
+		if (content == NULL || circle_linked_list_add_first(stacks->a,
+				content) == -1)
 			return (push_swap_stacks_free(stacks), NULL);
+	}
 	return (stacks);
 }
 
-// faire la methode is_finish
+int	push_swap_stacks_is_finished(t_push_swap_stacks *stacks)
+{
+	t_node	*node;
+
+	if (stacks->b->size)
+		return (0);
+	if (stacks->a->size < 2)
+		return (1);
+	node = stacks->a->head;
+	while (node != NULL && node->next != NULL)
+	{
+		if (*(int *)node->content > *(int *)node->next->content)
+			return (0);
+		node = node->next;
+	}
+	return (1);
+}
