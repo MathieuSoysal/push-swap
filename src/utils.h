@@ -6,14 +6,13 @@
 /*   By: hsoysal <hsoysal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/28 19:24:25 by hsoysal           #+#    #+#             */
-/*   Updated: 2024/04/28 19:24:38 by hsoysal          ###   ########.fr       */
+/*   Updated: 2024/05/04 18:16:03 by hsoysal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef UTILS_H
 # define UTILS_H
 
-# include "structures/linked_list/linked_list_with_node.h"
 # include "structures/node.h"
 # include <stdio.h>
 # include <stdlib.h>

@@ -6,7 +6,7 @@
 /*   By: hsoysal <hsoysal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/29 01:22:37 by hsoysal           #+#    #+#             */
-/*   Updated: 2024/05/04 17:27:07 by hsoysal          ###   ########.fr       */
+/*   Updated: 2024/05/04 17:30:07 by hsoysal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@ void	push_swap_stacks_free(t_push_swap_stacks *stacks)
 	if (stacks->b)
 		circle_linked_list_free(stacks->b, free);
 	free(stacks);
+	stacks = NULL;
 }
 
 static t_push_swap_stacks	*push_swap_stacks_init(void)

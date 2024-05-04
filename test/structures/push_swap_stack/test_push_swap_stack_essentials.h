@@ -6,7 +6,7 @@
 /*   By: hsoysal <hsoysal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/03 13:09:24 by hsoysal           #+#    #+#             */
-/*   Updated: 2024/05/04 17:21:20 by hsoysal          ###   ########.fr       */
+/*   Updated: 2024/05/04 17:46:57 by hsoysal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,7 @@ void	test_create(void)
 	t_push_swap_stacks	*stacks;
 	t_stack				*a;
 	t_stack				*b;
+	int					*content;
 
 	stacks = push_swap_stacks_create(tab, 5);
 	a = stacks->a;
@@ -30,7 +31,11 @@ void	test_create(void)
 	TEST_ASSERT(b->size == 0);
 	TEST_ASSERT(a->size == 5);
 	for (size_t i = 0; i < 5; i++)
-		TEST_CHECK(*(int *)circle_linked_list_pop_first(a) == tab[i]);
+	{
+		content = (int *)circle_linked_list_pop_first(a);
+		TEST_CHECK(*content == tab[i]);
+		free(content);
+	}
 	push_swap_stacks_free(stacks);
 }
 
@@ -41,6 +46,7 @@ void	test_is_finished(void)
 
 	stacks = push_swap_stacks_create(tab, 5);
 	TEST_CHECK(push_swap_stacks_is_finished(stacks) == 1);
+	push_swap_stacks_free(stacks);
 }
 
 void	test_push_swap_stack_essentials(void)
