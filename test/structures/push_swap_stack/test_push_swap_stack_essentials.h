@@ -6,7 +6,7 @@
 /*   By: hsoysal <hsoysal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/03 13:09:24 by hsoysal           #+#    #+#             */
-/*   Updated: 2024/05/07 12:56:37 by hsoysal          ###   ########.fr       */
+/*   Updated: 2024/05/07 13:02:57 by hsoysal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 # include "../../acutest.h"
 # include "push_swap_stack.h"
 # include <stdio.h>
+# include <limits.h>
 
 void	test_create(void)
 {
@@ -59,11 +60,33 @@ void	test_is_finished_2(void)
 	push_swap_stacks_free(stacks);
 }
 
+void	test_is_finished_3(void)
+{
+	int					tab[] = {INT_MAX, 2, 5, 4, 5};
+	t_push_swap_stacks	*stacks;
+
+	stacks = push_swap_stacks_create(tab, 5);
+	TEST_CHECK(push_swap_stacks_is_finished(stacks) == 0);
+	push_swap_stacks_free(stacks);
+}
+
+void	test_is_finished_4(void)
+{
+	int					tab[] = {INT_MIN, 2, 5, 4, INT_MAX};
+	t_push_swap_stacks	*stacks;
+
+	stacks = push_swap_stacks_create(tab, 5);
+	TEST_CHECK(push_swap_stacks_is_finished(stacks) == 1);
+	push_swap_stacks_free(stacks);
+}
+
 void	test_push_swap_stack_essentials(void)
 {
 	test_create();
 	test_is_finished();
 	test_is_finished_2();
+	test_is_finished_3();
+	test_is_finished_4();
 }
 
 #endif // TEST_PUSH_SWAP_STACK_ESSENTIALS_H
