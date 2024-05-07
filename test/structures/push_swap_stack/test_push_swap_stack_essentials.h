@@ -6,7 +6,7 @@
 /*   By: hsoysal <hsoysal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/03 13:09:24 by hsoysal           #+#    #+#             */
-/*   Updated: 2024/05/07 13:02:57 by hsoysal          ###   ########.fr       */
+/*   Updated: 2024/05/07 13:06:18 by hsoysal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,7 +62,7 @@ void	test_is_finished_2(void)
 
 void	test_is_finished_3(void)
 {
-	int					tab[] = {INT_MAX, 2, 5, 4, 5};
+	int					tab[] = {INT_MAX, 2, 3, 4, 5};
 	t_push_swap_stacks	*stacks;
 
 	stacks = push_swap_stacks_create(tab, 5);
@@ -72,7 +72,7 @@ void	test_is_finished_3(void)
 
 void	test_is_finished_4(void)
 {
-	int					tab[] = {INT_MIN, 2, 5, 4, INT_MAX};
+	int					tab[] = {INT_MIN, 2, 3, 4, INT_MAX};
 	t_push_swap_stacks	*stacks;
 
 	stacks = push_swap_stacks_create(tab, 5);
