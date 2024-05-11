@@ -6,10 +6,11 @@
 /*   By: hsoysal <hsoysal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/11 00:58:57 by hsoysal           #+#    #+#             */
-/*   Updated: 2024/05/11 01:44:23 by hsoysal          ###   ########.fr       */
+/*   Updated: 2024/05/11 02:43:50 by hsoysal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "../push_swap_printer/push_swap_printer.h"
 #include "founder.h"
 #include "push_swap_sorter.h"
 
@@ -27,11 +28,9 @@ static void	push_swap_sort_three(t_push_swap_stacks *stacks)
 		ra(stacks);
 		sa(stacks);
 	}
-	else if (minIndex == 0 && maxIndex == 2)
-		ra(stacks);
 	else if (minIndex == 2 && maxIndex == 0)
 	{
-		rra(stacks);
+		ra(stacks);
 		sa(stacks);
 	}
 	else if (minIndex == 1 && maxIndex == 2)

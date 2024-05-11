@@ -6,7 +6,7 @@
 /*   By: hsoysal <hsoysal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/29 00:51:51 by hsoysal           #+#    #+#             */
-/*   Updated: 2024/05/04 17:18:42 by hsoysal          ###   ########.fr       */
+/*   Updated: 2024/05/11 02:20:54 by hsoysal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -114,7 +114,6 @@ t_push_swap_stacks				*push_swap_stacks_create(int *array,
  * @brief Check if the stack a is sorted
  * @param stacks The stacks of push_swap
  */
-
 int								push_swap_stacks_is_finished(t_push_swap_stacks *stacks);
 
 #endif // PUSH_SWAP_STACK_H
