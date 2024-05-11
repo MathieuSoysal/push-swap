@@ -6,7 +6,7 @@
 /*   By: hsoysal <hsoysal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/11 00:58:57 by hsoysal           #+#    #+#             */
-/*   Updated: 2024/05/11 02:43:50 by hsoysal          ###   ########.fr       */
+/*   Updated: 2024/05/11 03:01:13 by hsoysal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,10 @@ static void	push_swap_sort_three(t_push_swap_stacks *stacks)
 	minIndex = push_swap_stack_find_min_index(stacks->a);
 	maxIndex = push_swap_stack_find_max_index(stacks->a);
 	if (minIndex == 0 && maxIndex == 1)
+	{
 		sa(stacks);
+		ra(stacks);
+	}
 	else if (minIndex == 1 && maxIndex == 0)
 	{
 		ra(stacks);
@@ -34,10 +37,7 @@ static void	push_swap_sort_three(t_push_swap_stacks *stacks)
 		sa(stacks);
 	}
 	else if (minIndex == 1 && maxIndex == 2)
-	{
 		sa(stacks);
-		ra(stacks);
-	}
 	else if (minIndex == 2 && maxIndex == 1)
 		rra(stacks);
 	return ;

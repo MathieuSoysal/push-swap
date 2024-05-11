@@ -18,9 +18,42 @@ void	test_push_swap_sorter_already_sorted(void)
 	push_swap_stacks_free(stacks);
 }
 
-void	test_push_swap_sorter_size_3(void)
+void	test_push_swap_sorter_size_3_1(void)
 {
 	int					tab[] = {4, 2, 1};
+	t_push_swap_stacks	*stacks;
+
+	stacks = push_swap_stacks_create(tab, 3);
+	push_swap_sort(stacks);
+	TEST_CHECK(push_swap_stacks_is_finished(stacks) == 1);
+	push_swap_stacks_free(stacks);
+}
+
+void	test_push_swap_sorter_size_3_2(void)
+{
+	int					tab[] = {2, 1, 4};
+	t_push_swap_stacks	*stacks;
+
+	stacks = push_swap_stacks_create(tab, 3);
+	push_swap_sort(stacks);
+	TEST_CHECK(push_swap_stacks_is_finished(stacks) == 1);
+	push_swap_stacks_free(stacks);
+}
+
+void	test_push_swap_sorter_size_3_3(void)
+{
+	int					tab[] = {1, 4, 2};
+	t_push_swap_stacks	*stacks;
+
+	stacks = push_swap_stacks_create(tab, 3);
+	push_swap_sort(stacks);
+	TEST_CHECK(push_swap_stacks_is_finished(stacks) == 1);
+	push_swap_stacks_free(stacks);
+}
+
+void	test_push_swap_sorter_size_3_4(void)
+{
+	int					tab[] = {2, 1, 4};
 	t_push_swap_stacks	*stacks;
 
 	stacks = push_swap_stacks_create(tab, 3);
@@ -32,7 +65,11 @@ void	test_push_swap_sorter_size_3(void)
 void	test_push_swap_sorter(void)
 {
 	test_push_swap_sorter_already_sorted();
-	test_push_swap_sorter_size_3();
+	test_push_swap_sorter_size_3_1();
+	test_push_swap_sorter_size_3_2();
+	test_push_swap_sorter_size_3_3();
+	test_push_swap_sorter_size_3_4();
+	test_push_swap_sorter_size_3_5();
 }
 
 #endif // TEST_PUSH_SWAP_SORTER_H
