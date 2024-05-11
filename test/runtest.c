@@ -6,7 +6,7 @@
 /*   By: hsoysal <hsoysal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/26 00:45:31 by hsoysal           #+#    #+#             */
-/*   Updated: 2024/05/11 01:04:30 by hsoysal          ###   ########.fr       */
+/*   Updated: 2024/05/11 04:43:20 by hsoysal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,7 @@
 #include "structures/push_swap_stack/test_push_swap_stack_rotates.h"
 #include "structures/push_swap_stack/test_push_swap_stack_essentials.h"
 #include "utils/push_swap_sorter/test_push_swap_sorter.h"
+#include "utils/push_swap_sorter/test_calculator.h"
 #include "test_utils.h"
 #include <stdio.h>
 
@@ -30,7 +31,6 @@
 TEST_LIST = {
 	//
 	{"Utility", test_utils}, //
-	{"Push Swap Sorter", test_push_swap_sorter},
 	{"Double Linked List Essentials", test_double_linked_list_essentials},
 	{"Double Linked List Head", test_double_linked_list_head},
 	{"Double Linked List Tail", test_double_linked_list_tail},
@@ -42,5 +42,7 @@ TEST_LIST = {
 	{"Push Swap Stack Pushs", test_push_swap_stack_pushs},
 	{"Push Swap Stack Rotates", test_push_swap_stack_rotates},
 	{"Push Swap Stack Essentials", test_push_swap_stack_essentials},
+	{"Push Swap Sorter", test_push_swap_sorter},
+	{"Push Swap Calculator", test_calculator},
 	{NULL, NULL} //
 };

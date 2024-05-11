@@ -6,7 +6,7 @@
 /*   By: hsoysal <hsoysal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/11 00:58:57 by hsoysal           #+#    #+#             */
-/*   Updated: 2024/05/11 03:16:41 by hsoysal          ###   ########.fr       */
+/*   Updated: 2024/05/11 03:57:12 by hsoysal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,28 +16,34 @@
 
 static void	push_swap_sort_three(t_push_swap_stacks *stacks)
 {
-	int	minIndex;
-	int	maxIndex;
+	int	min_index;
+	int	max_index;
 
-	minIndex = push_swap_stack_find_min_index(stacks->a);
-	maxIndex = push_swap_stack_find_max_index(stacks->a);
-	if (minIndex == 0 && maxIndex == 1)
+	min_index = push_swap_stack_find_min_index(stacks->a);
+	max_index = push_swap_stack_find_max_index(stacks->a);
+	if (min_index == 0 && max_index == 1)
 	{
 		sa(stacks);
 		ra(stacks);
 	}
-	else if (minIndex == 1 && maxIndex == 0)
+	else if (min_index == 1 && max_index == 0)
 		ra(stacks);
-	else if (minIndex == 2 && maxIndex == 0)
+	else if (min_index == 2 && max_index == 0)
 	{
 		ra(stacks);
 		sa(stacks);
 	}
-	else if (minIndex == 1 && maxIndex == 2)
+	else if (min_index == 1 && max_index == 2)
 		sa(stacks);
-	else if (minIndex == 2 && maxIndex == 1)
+	else if (min_index == 2 && max_index == 1)
 		rra(stacks);
 	return ;
+}
+
+static void	push_swap_sort_turkish(t_push_swap_stacks *stacks)
+{
+	pb(stacks);
+	pb(stacks);
 }
 
 void	push_swap_sort(t_push_swap_stacks *stacks)
