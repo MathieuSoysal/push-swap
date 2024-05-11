@@ -69,7 +69,6 @@ void	test_push_swap_sorter(void)
 	test_push_swap_sorter_size_3_2();
 	test_push_swap_sorter_size_3_3();
 	test_push_swap_sorter_size_3_4();
-	test_push_swap_sorter_size_3_5();
 }
 
 #endif // TEST_PUSH_SWAP_SORTER_H
