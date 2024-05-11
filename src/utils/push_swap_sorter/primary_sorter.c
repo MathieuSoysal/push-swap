@@ -6,7 +6,7 @@
 /*   By: hsoysal <hsoysal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/11 00:58:57 by hsoysal           #+#    #+#             */
-/*   Updated: 2024/05/11 03:01:13 by hsoysal          ###   ########.fr       */
+/*   Updated: 2024/05/11 03:16:41 by hsoysal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,10 +27,7 @@ static void	push_swap_sort_three(t_push_swap_stacks *stacks)
 		ra(stacks);
 	}
 	else if (minIndex == 1 && maxIndex == 0)
-	{
 		ra(stacks);
-		sa(stacks);
-	}
 	else if (minIndex == 2 && maxIndex == 0)
 	{
 		ra(stacks);
