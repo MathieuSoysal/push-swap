@@ -44,6 +44,18 @@ void	test_calculator(void)
 	moves = push_swap_calculate_push_swap_moves(stack, 0);
 	TEST_CHECK(moves == 0);
 	push_swap_stacks_free(stacks);
+
+	stacks = push_swap_stacks_create(tab, 10);
+	stack = stacks->a;
+	moves = push_swap_calculate_push_swap_moves(stack, 6);
+	TEST_CHECK(moves == -4);
+	push_swap_stacks_free(stacks);
+
+	stacks = push_swap_stacks_create(tab, 10);
+	stack = stacks->a;
+	moves = push_swap_calculate_push_swap_moves(stack, 5);
+	TEST_CHECK(moves == 5);
+	push_swap_stacks_free(stacks);
 }
 
 #endif // TEST_CALCULATOR_H
