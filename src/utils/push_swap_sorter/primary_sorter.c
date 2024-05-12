@@ -6,7 +6,7 @@
 /*   By: hsoysal <hsoysal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/11 00:58:57 by hsoysal           #+#    #+#             */
-/*   Updated: 2024/05/11 03:57:12 by hsoysal          ###   ########.fr       */
+/*   Updated: 2024/05/12 02:23:59 by hsoysal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 #include "founder.h"
 #include "push_swap_sorter.h"
 
-static void	push_swap_sort_three(t_push_swap_stacks *stacks)
+void	push_swap_sort_three(t_push_swap_stacks *stacks)
 {
 	int	min_index;
 	int	max_index;

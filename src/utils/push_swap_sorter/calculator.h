@@ -6,7 +6,7 @@
 /*   By: hsoysal <hsoysal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/11 03:59:23 by hsoysal           #+#    #+#             */
-/*   Updated: 2024/05/11 05:07:25 by hsoysal          ###   ########.fr       */
+/*   Updated: 2024/05/12 02:16:00 by hsoysal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,8 +23,20 @@
  * @param num The number to put in the stack
  * @return The number of moves,
 	positive if the element is near the top of the stack,
-    negative if the element is near the bottom of the stack
+	negative if the element is near the bottom of the stack
  */
-int	push_swap_calculate_push_swap_moves(t_stack *stack, int num);
+int		push_swap_calculate_push_swap_moves(t_stack *stack, int num);
+
+/**
+ * @brief Found the best index in the stack a,
+	to put the element in the right place in the stack b
+ * @param stacks The t_push_swap_stacks from push_swap
+ * @param index The index of the best element in the stack a,
+	negative if should use reverse rotate,
+	positive if should use rotate
+ * @param score The score of the best element in the stack a
+ */
+void	push_swap_calculate_best_index(t_push_swap_stacks *stacks, int *index,
+			int *score);
 
 #endif // CALCULATOR_H
