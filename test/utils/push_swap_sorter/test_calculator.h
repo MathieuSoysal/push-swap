@@ -8,26 +8,26 @@
 # include <limits.h>
 # include <stdio.h>
 
-// void	test_push_swap_calculate_best_index(void)
-// {
-// 	int					tab[] = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
-// 	t_stack				*stack;
-// 	t_push_swap_stacks	*stacks;
-// 	int					index;
-// 	int					score;
-// 	int					tab2[] = {2, 5, 7, 1, 6, 3, 9, 4, 8};
+void	test_push_swap_calculate_best_index(void)
+{
+	int					tab[] = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
+	t_stack				*stack;
+	t_push_swap_stacks	*stacks;
+	int					index;
+	int					score;
+	int					tab2[] = {2, 5, 7, 1, 6, 3, 9, 4, 8};
 
-// 	//
-// 	stacks = push_swap_stacks_create(tab2, 9);
-// 	pb(stacks);
-// 	pb(stacks);
-// 	pb(stacks);
-// 	pb(stacks); // a : 6 3 9 4 8 | b : 2 5 7 1
-// 	push_swap_calculate_best_index(stacks, &index, &score);
-// 	TEST_CHECK(index == 0);
-// 	TEST_CHECK(score == 2);
-// 	push_swap_stacks_free(stacks);
-// }
+	//
+	stacks = push_swap_stacks_create(tab2, 9);
+	pb(stacks);
+	pb(stacks);
+	pb(stacks);
+	pb(stacks); // a : 6 3 9 4 8 | b : 2 5 7 1
+	push_swap_calculate_best_index(stacks, &index, &score);
+	TEST_CHECK(index == 0);
+	TEST_CHECK(score == 2);
+	push_swap_stacks_free(stacks);
+}
 
 void	test_calculator(void)
 {
@@ -35,6 +35,7 @@ void	test_calculator(void)
 	t_stack				*stack;
 	t_push_swap_stacks	*stacks;
 	int					moves;
+	test_push_swap_calculate_best_index();
 
 	stacks = push_swap_stacks_create(tab, 11);
 	stack = stacks->a;
@@ -72,6 +73,7 @@ void	test_calculator(void)
 	moves = push_swap_calculate_push_swap_moves(stack, 6);
 	TEST_CHECK(moves == 2);
 	push_swap_stacks_free(stacks);
+	
 }
 
 #endif // TEST_CALCULATOR_H
