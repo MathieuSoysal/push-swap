@@ -25,7 +25,7 @@ void	test_push_swap_calculate_best_index(void)
 	pb(stacks); // a : 6 3 9 4 8 | b : 2 5 7 1
 	push_swap_calculate_best_index(stacks, &index, &score);
 	TEST_CHECK(index == 0);
-	TEST_CHECK(score == 2);
+	TEST_CHECK(score == -2);
 	push_swap_stacks_free(stacks);
 }
 

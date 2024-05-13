@@ -6,12 +6,13 @@
 /*   By: hsoysal <hsoysal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/11 04:08:45 by hsoysal           #+#    #+#             */
-/*   Updated: 2024/05/12 18:18:00 by hsoysal          ###   ########.fr       */
+/*   Updated: 2024/05/13 21:20:45 by hsoysal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../libft/libft.h"
 #include "calculator.h"
+#include <limits.h>
 
 int	push_swap_calculate_push_swap_moves(t_stack *stack, int num)
 {
@@ -70,7 +71,7 @@ static int	push_swap_calculate_index_score(t_push_swap_stacks *stacks,
 	int	negative_index;
 
 	positive_index = index;
-	negative_index = stacks->a->size - index;
+	negative_index = (stacks->a->size - index) * -1;
 	if (ft_abs(score - positive_index) < ft_abs(score - negative_index))
 		return (score - positive_index);
 	return (score - negative_index);
@@ -85,7 +86,7 @@ void	push_swap_calculate_best_index(t_push_swap_stacks *stacks,
 
 	index = 0;
 	node = stacks->a->head;
-	*best_moves = -1;
+	*best_moves = INT_MAX;
 	while (node)
 	{
 		moves = push_swap_calculate_push_swap_moves(stacks->b,
@@ -97,8 +98,8 @@ void	push_swap_calculate_best_index(t_push_swap_stacks *stacks,
 					moves);
 			*best_moves = push_swap_calculate_index_score(stacks, moves, index);
 		}
-		*best_moves += *best_index;
 		node = node->next;
 		index++;
 	}
+	*best_moves += *best_index;
 }
