@@ -6,7 +6,7 @@
 /*   By: hsoysal <hsoysal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/11 04:08:45 by hsoysal           #+#    #+#             */
-/*   Updated: 2024/05/13 21:20:45 by hsoysal          ###   ########.fr       */
+/*   Updated: 2024/05/14 20:55:36 by hsoysal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,7 @@ static int	push_swap_convert_index(int index, int size, int score)
 	int	negative_index;
 
 	positive_index = index;
-	negative_index = size - index;
+	negative_index = size - index; // TODO: Check if this is correct
 	if (ft_abs(score - positive_index) < ft_abs(score - negative_index))
 		return (positive_index);
 	return (negative_index);
