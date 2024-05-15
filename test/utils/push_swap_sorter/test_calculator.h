@@ -17,6 +17,7 @@ void	test_push_swap_calculate_best_index(void)
 	int					score;
 	int					tab2[] = {2, 5, 7, 1, 6, 3, 9, 4, 8};
 	int					tab3[] = {7, 1, 2, 5, 6, 3, 9, 4, 8};
+	int					tab4[] = {7, 1, 3, 4, 5, 6, 2, 2, 2, 8};
 
 	//
 	stacks = push_swap_stacks_create(tab2, 9);
@@ -36,8 +37,20 @@ void	test_push_swap_calculate_best_index(void)
 	pb(stacks);
 	pb(stacks); // a : 3 9 4 8 | b : 6 5 2 1 7
 	push_swap_calculate_best_index(stacks, &index, &score);
+	TEST_CHECK(index == 2);
+	TEST_CHECK(score == 2);
+	push_swap_stacks_free(stacks);
+	//
+	stacks = push_swap_stacks_create(tab4, 10);
+	pb(stacks);
+	pb(stacks);
+	pb(stacks);
+	pb(stacks);
+	pb(stacks);
+	pb(stacks); // a : 3 9 4 8 | b : 6 5 2 1 7
+	push_swap_calculate_best_index(stacks, &index, &score);
 	TEST_CHECK(index == -1);
-	TEST_CHECK(score == -2);
+	TEST_CHECK(score == 2);
 	push_swap_stacks_free(stacks);
 }
 
