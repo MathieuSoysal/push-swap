@@ -124,7 +124,7 @@ $(function() { codefold.init(0); });
 <div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>    pb(stacks); <span class="comment">// a : 6 3 9 4 8 | b : 1 7 5 2</span></div>
 <div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>    push_swap_calculate_best_index(stacks, &amp;index, &amp;score);</div>
 <div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>    TEST_CHECK(index == 0);</div>
-<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>    TEST_CHECK(score == -2);</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>    TEST_CHECK(score == 2);</div>
 <div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>    push_swap_stacks_free(stacks);</div>
 <div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>    <span class="comment">//</span></div>
 <div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>    stacks = push_swap_stacks_create(tab3, 9);</div>
@@ -134,8 +134,8 @@ $(function() { codefold.init(0); });
 <div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>    pb(stacks);</div>
 <div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>    pb(stacks); <span class="comment">// a : 3 9 4 8 | b : 6 5 2 1 7</span></div>
 <div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>    push_swap_calculate_best_index(stacks, &amp;index, &amp;score);</div>
-<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>    TEST_CHECK(index == 2);</div>
-<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>    TEST_CHECK(score == 2);</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>    TEST_CHECK(index == -1);</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>    TEST_CHECK(score == -1);</div>
 <div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>    push_swap_stacks_free(stacks);</div>
 <div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>    <span class="comment">//</span></div>
 <div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>    stacks = push_swap_stacks_create(tab4, 10);</div>
@@ -144,10 +144,10 @@ $(function() { codefold.init(0); });
 <div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>    pb(stacks);</div>
 <div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>    pb(stacks);</div>
 <div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>    pb(stacks);</div>
-<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>    pb(stacks); <span class="comment">// a : 2 2 2 8 | b : 6 5 2 1 7</span></div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>    pb(stacks); <span class="comment">// a : 2 2 2 8 | b : 6 5 4 3 1 7</span></div>
 <div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>    push_swap_calculate_best_index(stacks, &amp;index, &amp;score);</div>
 <div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>    TEST_CHECK(index == -1);</div>
-<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>    TEST_CHECK(score == 2);</div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>    TEST_CHECK(score == -1);</div>
 <div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>    push_swap_stacks_free(stacks);</div>
 <div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>}</div>
 <div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span> </div>
@@ -201,7 +201,7 @@ $(function() { codefold.init(0); });
 <div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span>    moves = push_swap_calculate_push_swap_moves(stack, 8);</div>
 <div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span>    TEST_CHECK(moves == 1);</div>
 <div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span>    push_swap_stacks_free(stacks);</div>
-<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span>    <span class="comment">// test_push_swap_calculate_best_index();</span></div>
+<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span>    test_push_swap_calculate_best_index();</div>
 <div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span>}</div>
 <div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span> </div>
 <div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span><span class="preprocessor">#endif </span><span class="comment">// TEST_CALCULATOR_H</span></div>
