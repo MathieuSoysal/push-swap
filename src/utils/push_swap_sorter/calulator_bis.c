@@ -6,7 +6,7 @@
 /*   By: hsoysal <hsoysal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/16 02:48:08 by hsoysal           #+#    #+#             */
-/*   Updated: 2024/05/16 04:45:55 by hsoysal          ###   ########.fr       */
+/*   Updated: 2024/05/16 04:54:17 by hsoysal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,6 +40,7 @@ static int	*init_min_max_indexes(int *min_max_index)
 	min_max_index[3] = 0;
 	return (min_max_index);
 }
+
 /**
  * @brief Update the number of moves with the min, max indexes,
 	and if need to reverse rotate

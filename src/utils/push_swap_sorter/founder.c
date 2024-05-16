@@ -6,7 +6,7 @@
 /*   By: hsoysal <hsoysal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/11 01:27:30 by hsoysal           #+#    #+#             */
-/*   Updated: 2024/05/11 01:34:27 by hsoysal          ###   ########.fr       */
+/*   Updated: 2024/05/16 04:55:07 by hsoysal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,12 +16,12 @@
 int	push_swap_stack_find_min_index(t_stack *stack)
 {
 	int		min;
-	int		minIndex;
+	int		min_index;
 	int		index;
 	t_node	*node;
 
 	min = INT_MAX;
-	minIndex = -1;
+	min_index = -1;
 	index = 0;
 	node = stack->head;
 	while (node)
@@ -29,23 +29,23 @@ int	push_swap_stack_find_min_index(t_stack *stack)
 		if (*(int *)node->content < min)
 		{
 			min = *(int *)node->content;
-			minIndex = index;
+			min_index = index;
 		}
 		node = node->next;
 		index++;
 	}
-	return (minIndex);
+	return (min_index);
 }
 
 int	push_swap_stack_find_max_index(t_stack *stack)
 {
 	int		max;
-	int		maxIndex;
+	int		max_index;
 	int		index;
 	t_node	*node;
 
 	max = INT_MIN;
-	maxIndex = -1;
+	max_index = -1;
 	index = 0;
 	node = stack->head;
 	while (node)
@@ -53,10 +53,10 @@ int	push_swap_stack_find_max_index(t_stack *stack)
 		if (*(int *)node->content > max)
 		{
 			max = *(int *)node->content;
-			maxIndex = index;
+			max_index = index;
 		}
 		node = node->next;
 		index++;
 	}
-	return (maxIndex);
+	return (max_index);
 }
