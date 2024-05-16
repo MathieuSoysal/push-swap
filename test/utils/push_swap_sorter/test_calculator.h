@@ -39,7 +39,7 @@ void	test_push_swap_calculate_best_index(void)
 	pb(stacks); // a : 6 3 9 4 8 | b : 1 7 5 2
 	push_swap_calculate_best_index(stacks, &index, &score);
 	TEST_CHECK(index == 0);
-	TEST_CHECK(score == -2);
+	TEST_CHECK(score == 2);
 	push_swap_stacks_free(stacks);
 	//
 	stacks = push_swap_stacks_create(tab3, 9);
@@ -49,8 +49,8 @@ void	test_push_swap_calculate_best_index(void)
 	pb(stacks);
 	pb(stacks); // a : 3 9 4 8 | b : 6 5 2 1 7
 	push_swap_calculate_best_index(stacks, &index, &score);
-	TEST_CHECK(index == 2);
-	TEST_CHECK(score == 2);
+	TEST_CHECK(index == -1);
+	TEST_CHECK(score == -1);
 	push_swap_stacks_free(stacks);
 	//
 	stacks = push_swap_stacks_create(tab4, 10);
@@ -59,10 +59,10 @@ void	test_push_swap_calculate_best_index(void)
 	pb(stacks);
 	pb(stacks);
 	pb(stacks);
-	pb(stacks); // a : 2 2 2 8 | b : 6 5 2 1 7
+	pb(stacks); // a : 2 2 2 8 | b : 6 5 4 3 1 7
 	push_swap_calculate_best_index(stacks, &index, &score);
 	TEST_CHECK(index == -1);
-	TEST_CHECK(score == 2);
+	TEST_CHECK(score == -1);
 	push_swap_stacks_free(stacks);
 }
 
@@ -116,7 +116,7 @@ void	test_calculator(void)
 	moves = push_swap_calculate_push_swap_moves(stack, 8);
 	TEST_CHECK(moves == 1);
 	push_swap_stacks_free(stacks);
-	// test_push_swap_calculate_best_index();
+	test_push_swap_calculate_best_index();
 }
 
 #endif // TEST_CALCULATOR_H

@@ -6,7 +6,7 @@
 /*   By: hsoysal <hsoysal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/11 04:08:45 by hsoysal           #+#    #+#             */
-/*   Updated: 2024/05/16 01:21:27 by hsoysal          ###   ########.fr       */
+/*   Updated: 2024/05/16 02:40:16 by hsoysal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,9 +57,9 @@ int	push_swap_calculate_push_swap_moves(t_stack *stack, int num)
 		moves++;
 	}
 	if (num < min)
-		return ((min_index + 1) % stack->size);
+		moves = ((min_index + 1) % stack->size);
 	if (num > max)
-		return (max_index);
+		moves = (max_index);
 	if (moves > ft_abs(moves - stack->size))
 		moves = moves - stack->size;
 	return (moves);
