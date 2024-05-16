@@ -95,14 +95,14 @@ $(function() { codefold.init(0); });
 <div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span> </div>
 <div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="keywordtype">void</span>    test_gest_diff(<span class="keywordtype">void</span>)</div>
 <div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>{</div>
-<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>    TEST_CHECK(calculNbDistinctMoves(-1, -2) == 2);</div>
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>    TEST_CHECK(calculNbDistinctMoves(1, -2) == 3);</div>
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>    TEST_CHECK(calculNbDistinctMoves(-1, 2) == 3);</div>
-<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>    TEST_CHECK(calculNbDistinctMoves(-1, -2) == 2);</div>
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>    TEST_CHECK(calculNbDistinctMoves(2, 1) == 2);</div>
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>    TEST_CHECK(calculNbDistinctMoves(2, -1) == 3);</div>
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>    TEST_CHECK(calculNbDistinctMoves(-2, 1) == 3);</div>
-<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>    TEST_CHECK(calculNbDistinctMoves(-2, -1) == 2);</div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>    TEST_CHECK(calcul_nb_distinct_moves(-1, -2) == 2);</div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>    TEST_CHECK(calcul_nb_distinct_moves(1, -2) == 3);</div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>    TEST_CHECK(calcul_nb_distinct_moves(-1, 2) == 3);</div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>    TEST_CHECK(calcul_nb_distinct_moves(-1, -2) == 2);</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>    TEST_CHECK(calcul_nb_distinct_moves(2, 1) == 2);</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>    TEST_CHECK(calcul_nb_distinct_moves(2, -1) == 3);</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>    TEST_CHECK(calcul_nb_distinct_moves(-2, 1) == 3);</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>    TEST_CHECK(calcul_nb_distinct_moves(-2, -1) == 2);</div>
 <div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>}</div>
 <div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span> </div>
 <div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span><span class="keywordtype">void</span>    test_push_swap_calculate_best_index(<span class="keywordtype">void</span>)</div>
@@ -162,43 +162,43 @@ $(function() { codefold.init(0); });
 <div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>    test_gest_diff();</div>
 <div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>    stacks = push_swap_stacks_create(tab, 11);</div>
 <div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>    stack = stacks-&gt;a;</div>
-<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>    moves = push_swap_calculate_push_swap_moves(stack, 5);</div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>    moves = calculate_push_swap_moves(stack, 5);</div>
 <div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>    TEST_CHECK(moves == -3);</div>
 <div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>    push_swap_stacks_free(stacks);</div>
 <div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>    <span class="comment">//</span></div>
 <div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>    stacks = push_swap_stacks_create(tab, 11);</div>
 <div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>    stack = stacks-&gt;a;</div>
-<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>    moves = push_swap_calculate_push_swap_moves(stack, 1);</div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>    moves = calculate_push_swap_moves(stack, 1);</div>
 <div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>    TEST_CHECK(moves == 0);</div>
 <div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>    push_swap_stacks_free(stacks);</div>
 <div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>    <span class="comment">//</span></div>
 <div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>    stacks = push_swap_stacks_create(tab, 11);</div>
 <div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>    stack = stacks-&gt;a;</div>
-<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>    moves = push_swap_calculate_push_swap_moves(stack, 10);</div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>    moves = calculate_push_swap_moves(stack, 10);</div>
 <div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span>    TEST_CHECK(moves == 4);</div>
 <div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span>    push_swap_stacks_free(stacks);</div>
 <div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>    <span class="comment">//</span></div>
 <div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>    stacks = push_swap_stacks_create(tab, 11);</div>
 <div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span>    stack = stacks-&gt;a;</div>
-<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>    moves = push_swap_calculate_push_swap_moves(stack, 30);</div>
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>    moves = calculate_push_swap_moves(stack, 30);</div>
 <div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>    TEST_CHECK(moves == 0);</div>
 <div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>    push_swap_stacks_free(stacks);</div>
 <div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span>    <span class="comment">//</span></div>
 <div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span>    stacks = push_swap_stacks_create(tab, 11);</div>
 <div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span>    stack = stacks-&gt;a;</div>
-<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span>    moves = push_swap_calculate_push_swap_moves(stack, 0);</div>
+<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span>    moves = calculate_push_swap_moves(stack, 0);</div>
 <div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span>    TEST_CHECK(moves == 0);</div>
 <div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span>    push_swap_stacks_free(stacks);</div>
 <div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span>    <span class="comment">//</span></div>
 <div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span>    stacks = push_swap_stacks_create(tab2, 4);</div>
 <div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span>    stack = stacks-&gt;a;</div>
-<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span>    moves = push_swap_calculate_push_swap_moves(stack, 6);</div>
+<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span>    moves = calculate_push_swap_moves(stack, 6);</div>
 <div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span>    TEST_CHECK(moves == 2);</div>
 <div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span>    push_swap_stacks_free(stacks);</div>
 <div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span>    <span class="comment">//</span></div>
 <div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span>    stacks = push_swap_stacks_create(tab2, 4);</div>
 <div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span>    stack = stacks-&gt;a;</div>
-<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span>    moves = push_swap_calculate_push_swap_moves(stack, 8);</div>
+<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span>    moves = calculate_push_swap_moves(stack, 8);</div>
 <div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span>    TEST_CHECK(moves == 1);</div>
 <div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span>    push_swap_stacks_free(stacks);</div>
 <div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span>    test_push_swap_calculate_best_index();</div>
