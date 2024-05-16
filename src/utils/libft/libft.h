@@ -6,7 +6,7 @@
 /*   By: hsoysal <hsoysal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/11 08:18:54 by hsoysal           #+#    #+#             */
-/*   Updated: 2024/05/11 04:17:12 by hsoysal          ###   ########.fr       */
+/*   Updated: 2024/05/15 05:21:15 by hsoysal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,7 @@ typedef struct s_list
 	struct s_list	*next;
 }					t_list;
 
+int					ft_get_sign(int n);
 int					ft_abs(int n);
 int					ft_min(int a, int b);
 int					ft_max(int a, int b);

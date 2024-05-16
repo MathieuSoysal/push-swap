@@ -6,7 +6,7 @@
 /*   By: hsoysal <hsoysal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/11 03:59:23 by hsoysal           #+#    #+#             */
-/*   Updated: 2024/05/12 02:16:00 by hsoysal          ###   ########.fr       */
+/*   Updated: 2024/05/15 20:08:36 by hsoysal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,5 +38,7 @@ int		push_swap_calculate_push_swap_moves(t_stack *stack, int num);
  */
 void	push_swap_calculate_best_index(t_push_swap_stacks *stacks, int *index,
 			int *score);
+
+int calculNbDistinctMoves(int index, int score);
 
 #endif // CALCULATOR_H
