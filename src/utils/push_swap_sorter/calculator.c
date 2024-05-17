@@ -6,7 +6,7 @@
 /*   By: hsoysal <hsoysal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/11 04:08:45 by hsoysal           #+#    #+#             */
-/*   Updated: 2024/05/17 05:12:11 by hsoysal          ###   ########.fr       */
+/*   Updated: 2024/05/17 06:12:58 by hsoysal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,11 @@
 #include "calculator.h"
 #include <limits.h>
 
-int	calcul_total_moves(int index_moves, int score)
+int	calcul_total_moves(int index_in_a, int index_in_b)
 {
-	if (ft_get_sign(index_moves) == ft_get_sign(score))
-		return (ft_max(ft_abs(index_moves), ft_abs(score)));
-	return (ft_abs(score) + ft_abs(index_moves));
+	if (ft_get_sign(index_in_a) == ft_get_sign(index_in_b))
+		return (ft_max(ft_abs(index_in_a), ft_abs(index_in_b)));
+	return (ft_abs(index_in_b) + ft_abs(index_in_a));
 }
 
 /**
@@ -37,24 +37,27 @@ static int	convert_index_to_moves(int index, int size, int score)
 
 	positive_index = calcul_total_moves(index, score);
 	negative_index = calcul_total_moves(index - size, score);
-	// TODO a ameliorer
 	if (positive_index < negative_index)
 		return (index);
 	return (index - size);
 }
 
-int	calculate_score(t_push_swap_stacks *stacks, int index_in_a,
-		int index_in_b)
+int	calculate_score(t_push_swap_stacks *stacks, int index_in_a, int index_in_b)
 {
-	int	positive_index;
-	int	negative_index;
+	int	revert_b_not_a;
+	int	revert_a_not_b;
+	int	revert_a_b;
+	int	not_a_not_b;
 
-	positive_index = calcul_total_moves(index_in_a, index_in_b);
-	negative_index = calcul_total_moves(index_in_a - stacks->a->size,
+	revert_b_not_a = calcul_total_moves(index_in_a, index_in_b
+			- stacks->b->size);
+	revert_a_not_b = calcul_total_moves(index_in_a - stacks->a->size,
 			index_in_b);
-	if (positive_index < negative_index)
-		return (positive_index);
-	return (negative_index);
+	revert_a_b = calcul_total_moves(index_in_a - stacks->a->size, index_in_b
+			- stacks->b->size);
+	not_a_not_b = calcul_total_moves(index_in_a, index_in_b);
+	return (ft_min(ft_min(revert_b_not_a, revert_a_not_b), ft_min(revert_a_b,
+				not_a_not_b)));
 }
 
 void	push_swap_calculate_best_index(t_push_swap_stacks *stacks,

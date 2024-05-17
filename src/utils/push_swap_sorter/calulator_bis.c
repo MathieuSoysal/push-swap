@@ -6,7 +6,7 @@
 /*   By: hsoysal <hsoysal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/16 02:48:08 by hsoysal           #+#    #+#             */
-/*   Updated: 2024/05/17 05:12:10 by hsoysal          ###   ########.fr       */
+/*   Updated: 2024/05/17 06:12:28 by hsoysal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,9 +54,6 @@ static void	update_index_with_min_max(t_stack *stack, int num,
 		*current_index = ((min_max_index[2] + 1) % stack->size);
 	if (num > min_max_index[1])
 		*current_index = min_max_index[3];
-	if (*current_index > ft_abs(*current_index - stack->size))
-		*current_index = *current_index - stack->size;
-// TODO here
 }
 
 int	calculate_index_of_given_num(t_stack *stack, int num)
