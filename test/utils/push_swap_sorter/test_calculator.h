@@ -10,14 +10,14 @@
 
 void	test_gest_diff(void)
 {
-	TEST_CHECK(calcul_nb_distinct_moves(-1, -2) == 2);
-	TEST_CHECK(calcul_nb_distinct_moves(1, -2) == 3);
-	TEST_CHECK(calcul_nb_distinct_moves(-1, 2) == 3);
-	TEST_CHECK(calcul_nb_distinct_moves(-1, -2) == 2);
-	TEST_CHECK(calcul_nb_distinct_moves(2, 1) == 2);
-	TEST_CHECK(calcul_nb_distinct_moves(2, -1) == 3);
-	TEST_CHECK(calcul_nb_distinct_moves(-2, 1) == 3);
-	TEST_CHECK(calcul_nb_distinct_moves(-2, -1) == 2);
+	TEST_CHECK(calcul_total_moves(-1, -2) == 2);
+	TEST_CHECK(calcul_total_moves(1, -2) == 3);
+	TEST_CHECK(calcul_total_moves(-1, 2) == 3);
+	TEST_CHECK(calcul_total_moves(-1, -2) == 2);
+	TEST_CHECK(calcul_total_moves(2, 1) == 2);
+	TEST_CHECK(calcul_total_moves(2, -1) == 3);
+	TEST_CHECK(calcul_total_moves(-2, 1) == 3);
+	TEST_CHECK(calcul_total_moves(-2, -1) == 2);
 }
 
 void	test_push_swap_calculate_best_index(void)
@@ -77,43 +77,43 @@ void	test_calculator(void)
 	test_gest_diff();
 	stacks = push_swap_stacks_create(tab, 11);
 	stack = stacks->a;
-	moves = calculate_push_swap_moves(stack, 5);
+	moves = calculate_index_of_given_num(stack, 5);
 	TEST_CHECK(moves == -3);
 	push_swap_stacks_free(stacks);
 	//
 	stacks = push_swap_stacks_create(tab, 11);
 	stack = stacks->a;
-	moves = calculate_push_swap_moves(stack, 1);
+	moves = calculate_index_of_given_num(stack, 1);
 	TEST_CHECK(moves == 0);
 	push_swap_stacks_free(stacks);
 	//
 	stacks = push_swap_stacks_create(tab, 11);
 	stack = stacks->a;
-	moves = calculate_push_swap_moves(stack, 10);
+	moves = calculate_index_of_given_num(stack, 10);
 	TEST_CHECK(moves == 4);
 	push_swap_stacks_free(stacks);
 	//
 	stacks = push_swap_stacks_create(tab, 11);
 	stack = stacks->a;
-	moves = calculate_push_swap_moves(stack, 30);
+	moves = calculate_index_of_given_num(stack, 30);
 	TEST_CHECK(moves == 0);
 	push_swap_stacks_free(stacks);
 	//
 	stacks = push_swap_stacks_create(tab, 11);
 	stack = stacks->a;
-	moves = calculate_push_swap_moves(stack, 0);
+	moves = calculate_index_of_given_num(stack, 0);
 	TEST_CHECK(moves == 0);
 	push_swap_stacks_free(stacks);
 	//
 	stacks = push_swap_stacks_create(tab2, 4);
 	stack = stacks->a;
-	moves = calculate_push_swap_moves(stack, 6);
+	moves = calculate_index_of_given_num(stack, 6);
 	TEST_CHECK(moves == 2);
 	push_swap_stacks_free(stacks);
 	//
 	stacks = push_swap_stacks_create(tab2, 4);
 	stack = stacks->a;
-	moves = calculate_push_swap_moves(stack, 8);
+	moves = calculate_index_of_given_num(stack, 8);
 	TEST_CHECK(moves == 1);
 	push_swap_stacks_free(stacks);
 	test_push_swap_calculate_best_index();

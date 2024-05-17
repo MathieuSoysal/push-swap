@@ -6,7 +6,7 @@
 /*   By: hsoysal <hsoysal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/16 02:48:08 by hsoysal           #+#    #+#             */
-/*   Updated: 2024/05/16 04:54:17 by hsoysal          ###   ########.fr       */
+/*   Updated: 2024/05/17 05:12:10 by hsoysal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,38 +47,39 @@ static int	*init_min_max_indexes(int *min_max_index)
  * @param stack The t_stack from push_swap
  * @param num The number to put in the stack
  */
-static void	update_moves(t_stack *stack, int num, int *min_max_index,
-		int *moves)
+static void	update_index_with_min_max(t_stack *stack, int num,
+		int *min_max_index, int *current_index)
 {
 	if (num < min_max_index[0])
-		*moves = ((min_max_index[2] + 1) % stack->size);
+		*current_index = ((min_max_index[2] + 1) % stack->size);
 	if (num > min_max_index[1])
-		*moves = min_max_index[3];
-	if (*moves > ft_abs(*moves - stack->size))
-		*moves = *moves - stack->size;
+		*current_index = min_max_index[3];
+	if (*current_index > ft_abs(*current_index - stack->size))
+		*current_index = *current_index - stack->size;
+// TODO here
 }
 
-int	calculate_push_swap_moves(t_stack *stack, int num)
+int	calculate_index_of_given_num(t_stack *stack, int num)
 {
-	int		moves;
+	int		index;
 	int		min_max_index[4];
 	t_node	*node;
 	t_node	*previous_node;
 
 	init_min_max_indexes(min_max_index);
-	moves = 0;
+	index = 0;
 	node = stack->head;
 	previous_node = stack->tail;
 	while (node)
 	{
-		update_min(min_max_index, *(int *)node->content, moves);
-		update_max(min_max_index, *(int *)node->content, moves);
+		update_min(min_max_index, *(int *)node->content, index);
+		update_max(min_max_index, *(int *)node->content, index);
 		if (*(int *)previous_node->content > num && *(int *)node->content < num)
 			break ;
 		previous_node = node;
 		node = node->next;
-		moves++;
+		index++;
 	}
-	update_moves(stack, num, min_max_index, &moves);
-	return (moves);
+	update_index_with_min_max(stack, num, min_max_index, &index);
+	return (index);
 }

@@ -6,7 +6,7 @@
 /*   By: hsoysal <hsoysal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/11 04:08:45 by hsoysal           #+#    #+#             */
-/*   Updated: 2024/05/16 04:53:25 by hsoysal          ###   ########.fr       */
+/*   Updated: 2024/05/17 05:12:11 by hsoysal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 #include "calculator.h"
 #include <limits.h>
 
-int	calcul_nb_distinct_moves(int index_moves, int score)
+int	calcul_total_moves(int index_moves, int score)
 {
 	if (ft_get_sign(index_moves) == ft_get_sign(score))
 		return (ft_max(ft_abs(index_moves), ft_abs(score)));
@@ -35,28 +35,23 @@ static int	convert_index_to_moves(int index, int size, int score)
 	int	positive_index;
 	int	negative_index;
 
-	positive_index = calcul_nb_distinct_moves(index, score);
-	negative_index = calcul_nb_distinct_moves(index - size, score);
+	positive_index = calcul_total_moves(index, score);
+	negative_index = calcul_total_moves(index - size, score);
+	// TODO a ameliorer
 	if (positive_index < negative_index)
 		return (index);
 	return (index - size);
 }
 
-/**
- * @brief Calculate the score of the index,
-	to put the element in the right place in the stack b
- * @param stacks The t_push_swap_stacks from push_swap
- * @param index The index to calculate the score
- * @return The score of the index
- */
-static int	calculate_score(t_push_swap_stacks *stacks, int index,
-		int score)
+int	calculate_score(t_push_swap_stacks *stacks, int index_in_a,
+		int index_in_b)
 {
 	int	positive_index;
 	int	negative_index;
 
-	positive_index = calcul_nb_distinct_moves(index, score);
-	negative_index = calcul_nb_distinct_moves(index - stacks->a->size, score);
+	positive_index = calcul_total_moves(index_in_a, index_in_b);
+	negative_index = calcul_total_moves(index_in_a - stacks->a->size,
+			index_in_b);
 	if (positive_index < negative_index)
 		return (positive_index);
 	return (negative_index);
@@ -65,27 +60,28 @@ static int	calculate_score(t_push_swap_stacks *stacks, int index,
 void	push_swap_calculate_best_index(t_push_swap_stacks *stacks,
 		int *best_a_moves, int *best_b_moves)
 {
-	int		moves_b;
-	int		index;
+	int		index_in_b;
+	int		index_in_a;
 	t_node	*node;
 	int		best_score;
 	int		current_score;
 
-	index = 0;
+	index_in_a = 0;
 	node = stacks->a->head;
 	best_score = INT_MAX;
 	while (node)
 	{
-		moves_b = calculate_push_swap_moves(stacks->b, *(int *)node->content);
-		current_score = calculate_score(stacks, index, moves_b);
+		index_in_b = calculate_index_of_given_num(stacks->b,
+				*(int *)node->content);
+		current_score = calculate_score(stacks, index_in_a, index_in_b);
 		if (best_score == INT_MAX || current_score < best_score)
 		{
-			*best_a_moves = convert_index_to_moves(index, stacks->a->size,
-					moves_b);
-			*best_b_moves = moves_b;
+			*best_a_moves = convert_index_to_moves(index_in_a, stacks->a->size,
+					index_in_b);
+			*best_b_moves = index_in_b;
 			best_score = current_score;
 		}
 		node = node->next;
-		index++;
+		index_in_a++;
 	}
 }

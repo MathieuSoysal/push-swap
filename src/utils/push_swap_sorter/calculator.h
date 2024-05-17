@@ -6,7 +6,7 @@
 /*   By: hsoysal <hsoysal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/11 03:59:23 by hsoysal           #+#    #+#             */
-/*   Updated: 2024/05/16 03:10:19 by hsoysal          ###   ########.fr       */
+/*   Updated: 2024/05/17 05:12:10 by hsoysal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@
 	positive if the element is near the top of the stack,
 	negative if the element is near the bottom of the stack
  */
-int		calculate_push_swap_moves(t_stack *stack, int num);
+int		calculate_index_of_given_num(t_stack *stack, int num);
 
 /**
  * @brief Found the best index in the stack a,
@@ -39,6 +39,16 @@ int		calculate_push_swap_moves(t_stack *stack, int num);
 void	push_swap_calculate_best_index(t_push_swap_stacks *stacks, int *index,
 			int *score);
 
-int		calcul_nb_distinct_moves(int index, int score);
+/**
+ * @brief Calculate the score of the index,
+	to put the element in the right place in the stack b
+ * @param stacks The t_push_swap_stacks from push_swap
+ * @param index The index to calculate the score
+ * @return The score of the index
+ */
+int		calculate_score(t_push_swap_stacks *stacks, int index_in_a,
+			int index_in_b);
+
+int		calcul_total_moves(int index, int score);
 
 #endif // CALCULATOR_H
