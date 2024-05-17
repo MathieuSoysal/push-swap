@@ -6,7 +6,7 @@
 /*   By: hsoysal <hsoysal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/11 04:08:45 by hsoysal           #+#    #+#             */
-/*   Updated: 2024/05/17 06:12:58 by hsoysal          ###   ########.fr       */
+/*   Updated: 2024/05/17 06:57:08 by hsoysal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,16 +30,23 @@ int	calcul_total_moves(int index_in_a, int index_in_b)
  * @return The converted index, positive if is better to use rotate,
 	negative if is better to use reverse rotate
  */
-static int	convert_index_to_moves(int index, int size, int score)
+static int	convert_index_to_moves(int index1, int size1, int index2, int size2)
 {
-	int	positive_index;
-	int	negative_index;
+	int	revert_2_not_1;
+	int	revert_1_not_2;
+	int	revert_1_2;
+	int	not_1_not_2;
+	int	best;
 
-	positive_index = calcul_total_moves(index, score);
-	negative_index = calcul_total_moves(index - size, score);
-	if (positive_index < negative_index)
-		return (index);
-	return (index - size);
+	revert_2_not_1 = calcul_total_moves(index1, index2 - size2);
+	revert_1_not_2 = calcul_total_moves(index1 - size1, index2);
+	revert_1_2 = calcul_total_moves(index1 - size1, index2 - size2);
+	not_1_not_2 = calcul_total_moves(index1, index2);
+	best = ft_min(ft_min(revert_2_not_1, revert_1_not_2), ft_min(revert_1_2,
+				not_1_not_2));
+	if (best == revert_2_not_1 || best == not_1_not_2)
+		return (index1);
+	return (index1 - size1);
 }
 
 int	calculate_score(t_push_swap_stacks *stacks, int index_in_a, int index_in_b)
@@ -80,8 +87,9 @@ void	push_swap_calculate_best_index(t_push_swap_stacks *stacks,
 		if (best_score == INT_MAX || current_score < best_score)
 		{
 			*best_a_moves = convert_index_to_moves(index_in_a, stacks->a->size,
-					index_in_b);
-			*best_b_moves = index_in_b;
+					index_in_b, stacks->b->size);
+			*best_b_moves = convert_index_to_moves(index_in_b, stacks->b->size,
+					index_in_a, stacks->a->size);
 			best_score = current_score;
 		}
 		node = node->next;

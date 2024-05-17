@@ -97,7 +97,7 @@ void	test_calculator(void)
 	stacks = push_swap_stacks_create(tab, 11);
 	stack = stacks->a;
 	moves = calculate_index_of_given_num(stack, 5);
-	TEST_CHECK(moves == -3);
+	TEST_CHECK(moves == 8);
 	push_swap_stacks_free(stacks);
 	//
 	stacks = push_swap_stacks_create(tab, 11);
