@@ -6,13 +6,14 @@
 /*   By: hsoysal <hsoysal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/11 00:58:57 by hsoysal           #+#    #+#             */
-/*   Updated: 2024/05/12 02:23:59 by hsoysal          ###   ########.fr       */
+/*   Updated: 2024/05/19 08:21:28 by hsoysal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap_printer/push_swap_printer.h"
 #include "founder.h"
 #include "push_swap_sorter.h"
+#include "turkish_sort.h"
 
 void	push_swap_sort_three(t_push_swap_stacks *stacks)
 {
@@ -40,19 +41,12 @@ void	push_swap_sort_three(t_push_swap_stacks *stacks)
 	return ;
 }
 
-static void	push_swap_sort_turkish(t_push_swap_stacks *stacks)
-{
-	pb(stacks);
-	pb(stacks);
-}
-
 void	push_swap_sort(t_push_swap_stacks *stacks)
 {
 	if (push_swap_stacks_is_finished(stacks) == 1 || stacks->a->size < 2)
 		return ;
 	if (stacks->a->size > 3)
-	{
-	}
+		push_swap_sort_turkish(stacks);
 	else if (stacks->a->size == 2)
 		sa(stacks);
 	else if (stacks->a->size == 3)
