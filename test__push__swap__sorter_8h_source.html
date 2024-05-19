@@ -180,19 +180,55 @@ $(function() { codefold.init(0); });
 <div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>    push_swap_stacks_free(stacks);</div>
 <div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>}</div>
 <div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span> </div>
-<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span><span class="keywordtype">void</span>    test_push_swap_sorter(<span class="keywordtype">void</span>)</div>
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span><span class="keywordtype">void</span>    test_turkish(<span class="keywordtype">void</span>)</div>
 <div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>{</div>
-<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>    test_push_swap_sorter_already_sorted();</div>
-<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span>    test_push_swap_sorter_size_3_1();</div>
-<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span>    test_push_swap_sorter_size_3_2();</div>
-<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span>    test_push_swap_sorter_size_3_3();</div>
-<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span>    test_push_swap_sorter_size_3_4();</div>
-<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span>    test_push_swap_sorter_size_3_5();</div>
-<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span>    test_push_swap_sorter_size_3_6();</div>
-<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span>    test_push_swap_sorter_size_2();</div>
-<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span>}</div>
-<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span> </div>
-<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span><span class="preprocessor">#endif </span><span class="comment">// TEST_PUSH_SWAP_SORTER_H</span></div>
+<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>    <span class="keywordtype">int</span>                 tab[] = {1, 0, 3, 4, 5, 6, 7, 8, 13, 10};</div>
+<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span>    <span class="keywordtype">int</span>                 tab1[] = {1, 0, 3, 4, 5, 99, 5959, 666, 13, 48488};</div>
+<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span>    <span class="keywordtype">int</span>                 tab2[] = {1111, 170170, 2222, 3333, 5555, 6666, 180180,</div>
+<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span>                            100100, 8888, 110110, 120120, 4444, 130130, 140140,</div>
+<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span>                            7777, 150150, 160160, 9999};</div>
+<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span>    <span class="keywordtype">int</span>                 tab4[] = {1111, -170170, 2222, 3333, 5555, 6666, 180180,</div>
+<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span>                            100100, 8888, 110110, -120120, 4444, -130130,</div>
+<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span>                            140140, 7777, 150150, -160160, 9999};</div>
+<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span>    <a class="code hl_struct" href="structs__push__swap__stacks.html">t_push_swap_stacks</a>  *stacks;</div>
+<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span>    <span class="keywordtype">int</span>                 index;</div>
+<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span>    <span class="keywordtype">int</span>                 score;</div>
+<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span> </div>
+<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span>    stacks = push_swap_stacks_create(tab, 10);</div>
+<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span>    push_swap_sort(stacks);</div>
+<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span>    TEST_CHECK(push_swap_stacks_is_finished(stacks) == 1);</div>
+<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span>    push_swap_stacks_free(stacks);</div>
+<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span>    <span class="comment">//</span></div>
+<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span>    stacks = push_swap_stacks_create(tab1, 10);</div>
+<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span>    push_swap_sort(stacks);</div>
+<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span>    TEST_CHECK(push_swap_stacks_is_finished(stacks) == 1);</div>
+<div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span>    push_swap_stacks_free(stacks);</div>
+<div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span>    <span class="comment">//</span></div>
+<div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span>    stacks = push_swap_stacks_create(tab2, 18);</div>
+<div class="line"><a id="l00123" name="l00123"></a><span class="lineno">  123</span>    push_swap_sort(stacks);</div>
+<div class="line"><a id="l00124" name="l00124"></a><span class="lineno">  124</span>    TEST_CHECK(push_swap_stacks_is_finished(stacks) == 1);</div>
+<div class="line"><a id="l00125" name="l00125"></a><span class="lineno">  125</span>    push_swap_stacks_free(stacks);</div>
+<div class="line"><a id="l00126" name="l00126"></a><span class="lineno">  126</span>    <span class="comment">//</span></div>
+<div class="line"><a id="l00127" name="l00127"></a><span class="lineno">  127</span>    stacks = push_swap_stacks_create(tab4, 18);</div>
+<div class="line"><a id="l00128" name="l00128"></a><span class="lineno">  128</span>    push_swap_sort(stacks);</div>
+<div class="line"><a id="l00129" name="l00129"></a><span class="lineno">  129</span>    TEST_CHECK(push_swap_stacks_is_finished(stacks) == 1);</div>
+<div class="line"><a id="l00130" name="l00130"></a><span class="lineno">  130</span>    push_swap_stacks_free(stacks);</div>
+<div class="line"><a id="l00131" name="l00131"></a><span class="lineno">  131</span>}</div>
+<div class="line"><a id="l00132" name="l00132"></a><span class="lineno">  132</span> </div>
+<div class="line"><a id="l00133" name="l00133"></a><span class="lineno">  133</span><span class="keywordtype">void</span>    test_push_swap_sorter(<span class="keywordtype">void</span>)</div>
+<div class="line"><a id="l00134" name="l00134"></a><span class="lineno">  134</span>{</div>
+<div class="line"><a id="l00135" name="l00135"></a><span class="lineno">  135</span>    test_push_swap_sorter_already_sorted();</div>
+<div class="line"><a id="l00136" name="l00136"></a><span class="lineno">  136</span>    test_push_swap_sorter_size_3_1();</div>
+<div class="line"><a id="l00137" name="l00137"></a><span class="lineno">  137</span>    test_push_swap_sorter_size_3_2();</div>
+<div class="line"><a id="l00138" name="l00138"></a><span class="lineno">  138</span>    test_push_swap_sorter_size_3_3();</div>
+<div class="line"><a id="l00139" name="l00139"></a><span class="lineno">  139</span>    test_push_swap_sorter_size_3_4();</div>
+<div class="line"><a id="l00140" name="l00140"></a><span class="lineno">  140</span>    test_push_swap_sorter_size_3_5();</div>
+<div class="line"><a id="l00141" name="l00141"></a><span class="lineno">  141</span>    test_push_swap_sorter_size_3_6();</div>
+<div class="line"><a id="l00142" name="l00142"></a><span class="lineno">  142</span>    test_push_swap_sorter_size_2();</div>
+<div class="line"><a id="l00143" name="l00143"></a><span class="lineno">  143</span>    test_turkish();</div>
+<div class="line"><a id="l00144" name="l00144"></a><span class="lineno">  144</span>}</div>
+<div class="line"><a id="l00145" name="l00145"></a><span class="lineno">  145</span> </div>
+<div class="line"><a id="l00146" name="l00146"></a><span class="lineno">  146</span><span class="preprocessor">#endif </span><span class="comment">// TEST_PUSH_SWAP_SORTER_H</span></div>
 <div class="ttc" id="astructs__push__swap__stacks_html"><div class="ttname"><a href="structs__push__swap__stacks.html">s_push_swap_stacks</a></div><div class="ttdef"><b>Definition</b> push_swap_stack.h:21</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
