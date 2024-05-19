@@ -6,7 +6,7 @@
 /*   By: hsoysal <hsoysal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/12 02:21:22 by hsoysal           #+#    #+#             */
-/*   Updated: 2024/05/12 03:03:05 by hsoysal          ###   ########.fr       */
+/*   Updated: 2024/05/17 07:17:10 by hsoysal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ static void	push_swap_sort_turkish1(t_push_swap_stacks *stacks)
 	while (stacks->a->size > 3)
 	{
 		score = 0;
-		push_swap_calculate_best_index(stacks, &index, &score);
+		push_swap_calculate_best_moves(stacks, &index, &score);
 		if (index < 0)
 			while (index++)
 				cpt_rot--;

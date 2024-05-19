@@ -6,7 +6,7 @@
 /*   By: hsoysal <hsoysal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/11 04:08:45 by hsoysal           #+#    #+#             */
-/*   Updated: 2024/05/17 06:57:08 by hsoysal          ###   ########.fr       */
+/*   Updated: 2024/05/17 07:17:10 by hsoysal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,7 +67,7 @@ int	calculate_score(t_push_swap_stacks *stacks, int index_in_a, int index_in_b)
 				not_a_not_b)));
 }
 
-void	push_swap_calculate_best_index(t_push_swap_stacks *stacks,
+void	push_swap_calculate_best_moves(t_push_swap_stacks *stacks,
 		int *best_a_moves, int *best_b_moves)
 {
 	int		index_in_b;

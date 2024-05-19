@@ -20,6 +20,33 @@ void	test_gest_diff(void)
 	TEST_CHECK(calcul_total_moves(-2, -1) == 2);
 }
 
+void	test_get_moves_to_put_in_a(void)
+{
+	int					tab[] = {10, 1, 2, 3};
+	t_push_swap_stacks	*stacks;
+	int					moves;
+
+	stacks = push_swap_stacks_create(tab, 4);
+	pb(stacks);
+	moves = get_moves_to_put_first_element_from_b_to_a(stacks);
+	TEST_CHECK(moves == 0);
+	push_swap_stacks_free(stacks);
+	//
+	int tab2[] = {0, 1, 2, 3};
+	stacks = push_swap_stacks_create(tab2, 4);
+	pb(stacks);
+	moves = get_moves_to_put_first_element_from_b_to_a(stacks);
+	TEST_CHECK(moves == 0);
+	push_swap_stacks_free(stacks);
+	//
+	int tab3[] = {4, 1, 3, 5};
+	stacks = push_swap_stacks_create(tab3, 4);
+	pb(stacks);
+	moves = get_moves_to_put_first_element_from_b_to_a(stacks);
+	TEST_CHECK(moves == -1);
+	push_swap_stacks_free(stacks);
+}
+
 void	test_push_swap_calculate_best_index(void)
 {
 	int					tab[] = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
@@ -31,13 +58,14 @@ void	test_push_swap_calculate_best_index(void)
 	int					tab3[] = {7, 1, 2, 5, 6, 3, 9, 4, 8};
 	int					tab4[] = {7, 1, 3, 4, 5, 6, 2, 2, 2, 8};
 
+	test_get_moves_to_put_in_a();
 	//
 	stacks = push_swap_stacks_create(tab2, 9);
 	pb(stacks);
 	pb(stacks);
 	pb(stacks);
 	pb(stacks); // a : 6 3 9 4 8 | b : 1 7 5 2
-	push_swap_calculate_best_index(stacks, &index, &score);
+	push_swap_calculate_best_moves(stacks, &index, &score);
 	TEST_CHECK(index == 0);
 	TEST_CHECK(score == 2);
 	push_swap_stacks_free(stacks);
@@ -48,7 +76,7 @@ void	test_push_swap_calculate_best_index(void)
 	pb(stacks);
 	pb(stacks);
 	pb(stacks); // a : 3 9 4 8 | b : 6 5 2 1 7
-	push_swap_calculate_best_index(stacks, &index, &score);
+	push_swap_calculate_best_moves(stacks, &index, &score);
 	TEST_CHECK(index == -1);
 	TEST_CHECK(score == -1);
 	push_swap_stacks_free(stacks);
@@ -60,7 +88,7 @@ void	test_push_swap_calculate_best_index(void)
 	pb(stacks);
 	pb(stacks);
 	pb(stacks); // a : 2 2 2 8 | b : 6 5 4 3 1 7
-	push_swap_calculate_best_index(stacks, &index, &score);
+	push_swap_calculate_best_moves(stacks, &index, &score);
 	TEST_CHECK(index == -1);
 	TEST_CHECK(score == -1);
 	push_swap_stacks_free(stacks);
