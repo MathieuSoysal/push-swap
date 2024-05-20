@@ -6,74 +6,84 @@
 /*   By: hsoysal <hsoysal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/10 13:42:30 by hsoysal           #+#    #+#             */
-/*   Updated: 2024/05/20 08:26:49 by hsoysal          ###   ########.fr       */
+/*   Updated: 2024/05/20 09:49:58 by hsoysal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*free_split(char **splitted, size_t size)
+int	count_words(const char *str, char *charset)
 {
-	while (size)
+	int	count;
+	int	i;
+
+	count = 0;
+	i = 0;
+	while (str[i])
 	{
-		--size;
-		free(splitted[size]);
+		if (!ft_strcontains(charset, str[i]))
+		{
+			count++;
+			while (str[i] && !ft_strcontains(charset, str[i]))
+				i++;
+		}
+		else
+			i++;
 	}
-	free(splitted);
-	return (NULL);
+	return (count);
 }
 
-static int	get_size_of_splited_element(char *str, char c)
+int	get_word_length(const char *str, char *charset)
 {
 	int	i;
 
 	i = 0;
-	while (str[i] && str[i] != c)
+	while (str[i] && !ft_strcontains(charset, str[i]))
 		i++;
 	return (i);
 }
 
-static char	**create_array_of_string(int size)
+void	ft_free_split(char **split)
 {
-	char	**result;
+	int	i;
 
-	result = ((char **)malloc((size + 1) * sizeof(char *)));
-	if (result != NULL)
-		result[size] = NULL;
-	return (result);
-}
-
-static char	**ft_split_recursiv(char *str, char c, int size)
-{
-	char	**result;
-	int		length;
-	char	*splitted;
-
-	if (!*str)
-		return (create_array_of_string(size));
-	if (*str != c)
-	{
-		length = get_size_of_splited_element(str, c);
-		result = ft_split_recursiv(str + length, c, size + 1);
-		if (result == NULL)
-			return (NULL);
-		splitted = ft_substr(str, 0, length);
-		if (splitted == NULL)
-			return (free_split(result, size));
-		result[size] = splitted;
-		return (result);
-	}
-	while (*str && *str == c)
-		str++;
-	return (ft_split_recursiv(str, c, size));
+	if (split == NULL)
+		return ;
+	i = -1;
+	while (split[++i])
+		free(split[i]);
+	free(split);
 }
 
 char	**ft_split(const char *str, char c)
 {
+	char	**result;
+	int		length;
+	int		i;
+
+	i = -1;
 	if (str == NULL)
 		return (NULL);
-	return (ft_split_recursiv((char *)str, c, 0));
+	result = ft_calloc((count_words(str, (char []){c, '\0'}) + 1),
+			sizeof(char *));
+	if (result == NULL)
+		return (NULL);
+	while (*str)
+	{
+		if (!ft_strcontains((char []){c, '\0'}, *str))
+		{
+			length = get_word_length(str, (char []){c, '\0'});
+			result[++i] = ft_substr(str, 0, length);
+			if (result[i] == NULL)
+				return (NULL);
+			str += length;
+		}
+		else
+			str++;
+	}
+	return (result);
 }
+
 /*
 int	main(void)
 {

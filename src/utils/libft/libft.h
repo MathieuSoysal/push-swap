@@ -6,7 +6,7 @@
 /*   By: hsoysal <hsoysal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/11 08:18:54 by hsoysal           #+#    #+#             */
-/*   Updated: 2024/05/20 07:53:17 by hsoysal          ###   ########.fr       */
+/*   Updated: 2024/05/20 09:28:56 by hsoysal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 # define LIBFT_H
 # include <fcntl.h>
 # include <malloc.h>
+# include <stdbool.h>
 # include <stdlib.h>
 # include <unistd.h>
 
@@ -23,7 +24,8 @@ typedef struct s_list
 	struct s_list	*next;
 }					t_list;
 
-void				*free_split(char **splitted, size_t size);
+bool				ft_strcontains(const char *str, char c);
+void				ft_free_split(char **splitted);
 long long			ft_atoll(const char *nptr);
 int					ft_get_sign(int n);
 int					ft_abs(int n);

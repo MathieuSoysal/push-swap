@@ -6,10 +6,11 @@
 /*   By: hsoysal <hsoysal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/29 01:06:31 by hsoysal           #+#    #+#             */
-/*   Updated: 2024/04/29 01:37:43 by hsoysal          ###   ########.fr       */
+/*   Updated: 2024/05/20 08:46:22 by hsoysal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "../../utils/libft/libft.h"
 #include "push_swap_stack.h"
 
 static void	push(t_stack *from, t_stack *to)
@@ -25,9 +26,11 @@ static void	push(t_stack *from, t_stack *to)
 void	pa(t_push_swap_stacks *stacks)
 {
 	push(stacks->b, stacks->a);
+	ft_putstr_fd("pa\n", 1);
 }
 
 void	pb(t_push_swap_stacks *stacks)
 {
 	push(stacks->a, stacks->b);
+	ft_putstr_fd("pb\n", 1);
 }

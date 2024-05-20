@@ -6,7 +6,7 @@
 /*   By: hsoysal <hsoysal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/20 04:42:49 by hsoysal           #+#    #+#             */
-/*   Updated: 2024/05/20 08:35:27 by hsoysal          ###   ########.fr       */
+/*   Updated: 2024/05/20 09:49:01 by hsoysal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,6 +50,8 @@ char	**parse_to_string_array(int argc, char **argv, int *size)
 		return (NULL);
 	split = ft_split(joined_args, ' ');
 	free(joined_args);
+	if (!split)
+		return (NULL);
 	*size = -1;
 	while (split[++(*size)])
 		if (!is_valid_str(split[*size]))
@@ -86,7 +88,7 @@ int	*parse_from_input_to_int_array(int argc, char **argv, int *size)
 	if (!string_array)
 		return (NULL);
 	int_array = parse_to_int_array(*size, string_array);
-	free_split(string_array, *size);
+	ft_free_split(string_array);
 	return (int_array);
 }
 
