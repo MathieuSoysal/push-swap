@@ -25,6 +25,8 @@ void	test_get_moves_to_put_in_a(void)
 	int					tab[] = {10, 1, 2, 3};
 	t_push_swap_stacks	*stacks;
 	int					moves;
+	int					tab2[] = {0, 1, 2, 3};
+	int					tab3[] = {4, 1, 3, 5};
 
 	stacks = push_swap_stacks_create(tab, 4);
 	pb(stacks);
@@ -32,14 +34,12 @@ void	test_get_moves_to_put_in_a(void)
 	TEST_CHECK(moves == 0);
 	push_swap_stacks_free(stacks);
 	//
-	int tab2[] = {0, 1, 2, 3};
 	stacks = push_swap_stacks_create(tab2, 4);
 	pb(stacks);
 	moves = get_moves_to_put_first_element_from_b_to_a(stacks);
 	TEST_CHECK(moves == 0);
 	push_swap_stacks_free(stacks);
 	//
-	int tab3[] = {4, 1, 3, 5};
 	stacks = push_swap_stacks_create(tab3, 4);
 	pb(stacks);
 	moves = get_moves_to_put_first_element_from_b_to_a(stacks);
@@ -54,13 +54,10 @@ void	test_push_swap_calculate_best_index(void)
 	t_push_swap_stacks	*stacks;
 	int					index;
 	int					score;
-	int					tab2[] = {2, 5, 7, 1, 6, 3, 9, 4, 8};
-	int					tab3[] = {7, 1, 2, 5, 6, 3, 9, 4, 8};
-	int					tab4[] = {7, 1, 3, 4, 5, 6, 2, 2, 2, 8};
 
 	test_get_moves_to_put_in_a();
 	//
-	stacks = push_swap_stacks_create(tab2, 9);
+	stacks = push_swap_stacks_create((int[]){2, 5, 7, 1, 6, 3, 9, 4, 8}, 9);
 	pb(stacks);
 	pb(stacks);
 	pb(stacks);
@@ -70,7 +67,7 @@ void	test_push_swap_calculate_best_index(void)
 	TEST_CHECK(score == 2);
 	push_swap_stacks_free(stacks);
 	//
-	stacks = push_swap_stacks_create(tab3, 9);
+	stacks = push_swap_stacks_create((int[]){7, 1, 2, 5, 6, 3, 9, 4, 8}, 9);
 	pb(stacks);
 	pb(stacks);
 	pb(stacks);
@@ -81,7 +78,7 @@ void	test_push_swap_calculate_best_index(void)
 	TEST_CHECK(score == -1);
 	push_swap_stacks_free(stacks);
 	//
-	stacks = push_swap_stacks_create(tab4, 10);
+	stacks = push_swap_stacks_create((int[]){7, 1, 3, 4, 5, 6, 2, 2, 2, 8}, 10);
 	pb(stacks);
 	pb(stacks);
 	pb(stacks);
@@ -96,13 +93,12 @@ void	test_push_swap_calculate_best_index(void)
 
 void	test_calculator2(void)
 {
-	int					tab[] = {5, 4, 3, 1, 7, 6};
 	t_stack				*stack;
 	t_push_swap_stacks	*stacks;
 	int					index_in_b;
 	int					score;
 
-	stacks = push_swap_stacks_create(tab, 6);
+	stacks = push_swap_stacks_create((int[]){5, 4, 3, 1, 7, 6}, 6);
 	stack = stacks->a;
 	stacks->b->size = 8;
 	index_in_b = calculate_index_of_given_num(stack, 8);
