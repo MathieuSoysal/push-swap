@@ -6,18 +6,18 @@
 /*   By: hsoysal <hsoysal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/10 13:42:30 by hsoysal           #+#    #+#             */
-/*   Updated: 2023/11/11 06:52:33 by hsoysal          ###   ########.fr       */
+/*   Updated: 2024/05/20 07:53:29 by hsoysal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static char	**free_result(char **splitted, size_t size)
+void	*free_split(char **splitted, size_t size)
 {
 	while (size)
 	{
-		free(splitted[size]);
 		--size;
+		free(splitted[size]);
 	}
 	free(splitted);
 	return (NULL);
@@ -59,7 +59,7 @@ static char	**ft_split_recursiv(char *str, char c, int size)
 			return (NULL);
 		splitted = ft_substr(str, 0, length);
 		if (splitted == NULL)
-			return (free_result(result, size));
+			return (free_split(result, size));
 		result[size] = splitted;
 		return (result);
 	}
