@@ -6,7 +6,7 @@
 /*   By: hsoysal <hsoysal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/29 01:22:37 by hsoysal           #+#    #+#             */
-/*   Updated: 2024/05/20 09:48:30 by hsoysal          ###   ########.fr       */
+/*   Updated: 2024/05/21 09:56:27 by hsoysal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,10 +48,12 @@ t_push_swap_stacks	*push_swap_stacks_create(int *array, size_t size)
 	{
 		content = (int *)malloc(sizeof(int));
 		if (!content)
-			return (push_swap_stacks_free(stacks), NULL);
+		{
+			push_swap_stacks_free(stacks);
+			return (NULL);
+		}
 		*content = array[size];
-		if (circle_linked_list_add_first(stacks->a,
-				content) == -1)
+		if (circle_linked_list_add_first(stacks->a, content) == -1)
 			return (push_swap_stacks_free(stacks), NULL);
 	}
 	return (stacks);

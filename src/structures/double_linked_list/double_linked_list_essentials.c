@@ -6,7 +6,7 @@
 /*   By: hsoysal <hsoysal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/26 20:02:42 by hsoysal           #+#    #+#             */
-/*   Updated: 2024/04/27 19:07:49 by hsoysal          ###   ########.fr       */
+/*   Updated: 2024/05/21 10:00:02 by hsoysal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,9 @@ void	double_linked_list_free(t_double_linked_list *obj,
 		if (free_content)
 			free_content(current->content);
 		free(current);
+		current = NULL;
 		current = next;
 	}
 	free(obj);
+	obj = NULL;
 }

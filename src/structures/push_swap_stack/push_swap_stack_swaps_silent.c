@@ -1,33 +1,43 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap_stack_rotates.c                          :+:      :+:    :+:   */
+/*   push_swap_stack_swaps_silent.c                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hsoysal <hsoysal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/29 01:06:31 by hsoysal           #+#    #+#             */
-/*   Updated: 2024/05/21 08:59:23 by hsoysal          ###   ########.fr       */
+/*   Updated: 2024/05/21 09:09:39 by hsoysal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../utils/libft/libft.h"
-#include "push_swap_silent.h"
 #include "push_swap_stack.h"
 
-void	ra(t_push_swap_stacks *stacks)
+static void	swap(t_stack *stack)
 {
-	silent_ra(stacks);
-	ft_putstr_fd("ra\n", 1);
+	void	*first;
+	void	*second;
+
+	if (stack->size < 2)
+		return ;
+	first = stack->head->content;
+	second = stack->head->next->content;
+	stack->head->content = second;
+	stack->head->next->content = first;
 }
 
-void	rb(t_push_swap_stacks *stacks)
+void	silent_sa(t_push_swap_stacks *stacks)
 {
-	silent_rb(stacks);
-	ft_putstr_fd("rb\n", 1);
+	swap(stacks->a);
 }
 
-void	rr(t_push_swap_stacks *stacks)
+void	silent_sb(t_push_swap_stacks *stacks)
 {
-	silent_rr(stacks);
-	ft_putstr_fd("rr\n", 1);
+	swap(stacks->b);
+}
+
+void	silent_ss(t_push_swap_stacks *stacks)
+{
+	swap(stacks->a);
+	swap(stacks->b);
 }

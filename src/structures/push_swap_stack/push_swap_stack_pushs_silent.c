@@ -1,33 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap_stack_rotates.c                          :+:      :+:    :+:   */
+/*   push_swap_stack_pushs_silent.c                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hsoysal <hsoysal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/29 01:06:31 by hsoysal           #+#    #+#             */
-/*   Updated: 2024/05/21 08:59:23 by hsoysal          ###   ########.fr       */
+/*   Updated: 2024/05/21 09:09:29 by hsoysal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../utils/libft/libft.h"
-#include "push_swap_silent.h"
 #include "push_swap_stack.h"
 
-void	ra(t_push_swap_stacks *stacks)
+static void	push(t_stack *from, t_stack *to)
 {
-	silent_ra(stacks);
-	ft_putstr_fd("ra\n", 1);
+	void	*first;
+
+	if (from->size == 0)
+		return ;
+	first = circle_linked_list_pop_first(from);
+	circle_linked_list_add_first(to, first);
 }
 
-void	rb(t_push_swap_stacks *stacks)
+void	silent_pa(t_push_swap_stacks *stacks)
 {
-	silent_rb(stacks);
-	ft_putstr_fd("rb\n", 1);
+	push(stacks->b, stacks->a);
 }
 
-void	rr(t_push_swap_stacks *stacks)
+void	silent_pb(t_push_swap_stacks *stacks)
 {
-	silent_rr(stacks);
-	ft_putstr_fd("rr\n", 1);
+	push(stacks->a, stacks->b);
 }

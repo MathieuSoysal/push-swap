@@ -6,12 +6,17 @@
 /*   By: hsoysal <hsoysal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/11 08:18:54 by hsoysal           #+#    #+#             */
-/*   Updated: 2024/05/20 09:28:56 by hsoysal          ###   ########.fr       */
+/*   Updated: 2024/05/21 06:37:34 by hsoysal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
+
+# ifndef BUFFER_SIZE
+#  define BUFFER_SIZE 1
+# endif
+
 # include <fcntl.h>
 # include <malloc.h>
 # include <stdbool.h>
@@ -24,6 +29,7 @@ typedef struct s_list
 	struct s_list	*next;
 }					t_list;
 
+char				*ft_get_next_line(int fd);
 bool				ft_strcontains(const char *str, char c);
 void				ft_free_split(char **splitted);
 long long			ft_atoll(const char *nptr);
