@@ -115,6 +115,7 @@ MERGETEST:
 	cp -R src/* test_TEMP 
 	cp  \-R test/* test_TEMP
 	rm test_TEMP/main.c
+	rm test_TEMP/utils/checker/checker.c
 
 
 GCOV: MERGETEST  
