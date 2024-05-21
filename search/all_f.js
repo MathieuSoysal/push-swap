@@ -7,5 +7,6 @@ var searchData=
   ['this_20project_4',['Set workspace to this project',['../index.html#autotoc_md7',1,'']]],
   ['to_20this_20project_5',['Set workspace to this project',['../index.html#autotoc_md7',1,'']]],
   ['to_20use_20this_20c_20template_6',['How to use this C template',['../index.html#autotoc_md4',1,'']]],
-  ['tt_20src_20main_20c_20tt_7',['Build and Run with &lt;tt&gt;src/main.c&lt;/tt&gt;',['../index.html#autotoc_md5',1,'']]]
+  ['tt_7',['Build and Run with &lt;tt&gt;src/main.c&lt;/tt&gt;',['../index.html#autotoc_md5',1,'']]],
+  ['tt_20src_20main_20c_20tt_8',['Build and Run with &lt;tt&gt;src/main.c&lt;/tt&gt;',['../index.html#autotoc_md5',1,'']]]
 ];
