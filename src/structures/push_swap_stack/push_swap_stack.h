@@ -6,7 +6,7 @@
 /*   By: hsoysal <hsoysal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/29 00:51:51 by hsoysal           #+#    #+#             */
-/*   Updated: 2024/05/11 02:20:54 by hsoysal          ###   ########.fr       */
+/*   Updated: 2024/05/21 10:05:47 by hsoysal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -97,7 +97,8 @@ void							rrr(t_push_swap_stacks *stacks);
  * @brief free the stacks of push_swap
  * @param stacks The stacks of push_swap
  */
-void							push_swap_stacks_free(t_push_swap_stacks *stacks);
+void							push_swap_stacks_free(
+									t_push_swap_stacks *stacks);
 
 /**
  * @brief Create the stacks of push_swap, from a list of integers,
@@ -114,6 +115,7 @@ t_push_swap_stacks				*push_swap_stacks_create(int *array,
  * @brief Check if the stack a is sorted
  * @param stacks The stacks of push_swap
  */
-int								push_swap_stacks_is_finished(t_push_swap_stacks *stacks);
+int								push_swap_stacks_is_finished(
+									t_push_swap_stacks *stacks);
 
 #endif // PUSH_SWAP_STACK_H

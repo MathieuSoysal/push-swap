@@ -6,15 +6,13 @@
 /*   By: hsoysal <hsoysal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/20 06:25:06 by hsoysal           #+#    #+#             */
-/*   Updated: 2024/05/20 08:33:10 by hsoysal          ###   ########.fr       */
+/*   Updated: 2024/05/21 10:03:38 by hsoysal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../utils/libft/libft.h"
 #include "input_checker.h"
 #include <limits.h>
-
-
 
 bool	is_valid_input(int size, char **numbers)
 {

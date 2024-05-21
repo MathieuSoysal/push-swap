@@ -6,7 +6,7 @@
 /*   By: hsoysal <hsoysal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/10 13:42:30 by hsoysal           #+#    #+#             */
-/*   Updated: 2024/05/21 09:54:36 by hsoysal          ###   ########.fr       */
+/*   Updated: 2024/05/21 10:04:26 by hsoysal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,21 +64,18 @@ char	**ft_split(const char *str, char c)
 	i = -1;
 	if (str == NULL)
 		return (NULL);
-	result = ft_calloc((count_words(str, (char[]){c, '\0'}) + 1),
+	result = ft_calloc((count_words(str, (char []){c, '\0'}) + 1),
 			sizeof(char *));
 	if (result == NULL)
 		return (NULL);
 	while (*str)
 	{
-		if (!ft_strcontains((char[]){c, '\0'}, *str))
+		if (!ft_strcontains((char []){c, '\0'}, *str))
 		{
-			length = get_word_length(str, (char[]){c, '\0'});
+			length = get_word_length(str, (char []){c, '\0'});
 			result[++i] = ft_substr(str, 0, length);
 			if (result[i] == NULL)
-			{
-				ft_free_split(result);
-				return (NULL);
-			}
+				return (ft_free_split(result), NULL);
 			str += length;
 		}
 		else

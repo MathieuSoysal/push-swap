@@ -6,7 +6,7 @@
 /*   By: hsoysal <hsoysal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/12 02:21:22 by hsoysal           #+#    #+#             */
-/*   Updated: 2024/05/21 08:50:32 by hsoysal          ###   ########.fr       */
+/*   Updated: 2024/05/21 10:04:46 by hsoysal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,7 +70,7 @@ static void	push_swap_sort_turkish1(t_push_swap_stacks *stacks)
 		interpret_moves(stacks, moves_in_a, 0);
 		pa(stacks);
 	}
-	interpret_moves(stacks, push_swap_stack_find_min_index(stacks->a), 0); // ICIu
+	interpret_moves(stacks, push_swap_stack_find_min_index(stacks->a), 0);
 }
 
 void	push_swap_sort_turkish(t_push_swap_stacks *stacks)

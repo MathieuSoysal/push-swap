@@ -6,7 +6,7 @@
 /*   By: hsoysal <hsoysal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/20 11:44:28 by hsoysal           #+#    #+#             */
-/*   Updated: 2024/05/21 09:20:12 by hsoysal          ###   ########.fr       */
+/*   Updated: 2024/05/21 10:03:52 by hsoysal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,5 @@ typedef enum e_errors	t_errors;
 	-1 if the command is invalid
  */
 t_errors	checker_interpret_all_given_commands(t_push_swap_stacks *stacks);
-
 
 #endif // CHECKER_H
