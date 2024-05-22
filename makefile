@@ -101,12 +101,12 @@ SRC_BONUS = ./src/utils/checker/checker.c \
 
 BUILD: 
 	mkdir -p  $(build_folder)
-	$(CC) -o $(build_folder)/main.out $(SRC_GENERAL) src/main.c
+	$(CC) -o $(build_folder)/pushswap $(SRC_GENERAL) src/main.c
 	echo "$(green)Built and deploy at $ \(mag) $(build_folder)/$(outfile)$(reset)";
 
 BONUS: 
 	mkdir -p  $(build_folder)
-	$(CC) -o $(build_folder)/main.out $(SRC_GENERAL) $(SRC_BONUS)
+	$(CC) -o $(build_folder)/checker $(SRC_GENERAL) $(SRC_BONUS)
 	echo "$(green)Built and deploy at $ \(mag) $(build_folder)/$(outfile)$(reset)";
 
 MERGETEST:
