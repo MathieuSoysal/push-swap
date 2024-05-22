@@ -6,7 +6,7 @@
 /*   By: hsoysal <hsoysal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/20 14:10:13 by hsoysal           #+#    #+#             */
-/*   Updated: 2024/05/21 08:39:43 by hsoysal          ###   ########.fr       */
+/*   Updated: 2024/05/22 04:18:45 by hsoysal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,8 @@ int	main(int argc, char **argv)
 {
 	t_push_swap_stacks	*stacks;
 
+	if (argc == 1)
+		return (0);
 	stacks = parse_to_push_swap_stacks(argc, argv);
 	if (stacks == NULL)
 		return (ft_putstr_fd("Error\n", 2), 1);
