@@ -5,11 +5,10 @@ CC=gcc -g
 .PHONY: BUILD TEST RUN  BUILD_RUN  # Main piplines
 .PHONY: RUNTEST  MERGETEST cleantest clean
 
-
 build_folder = build
 testbuild =  test/build
 src_folder = src
-outfile_name = main.out
+outfile_name = pushswap
 outfile = $(build_folder)/$(outfile_name)
 
 green=`tput setaf 2; tput bold`
@@ -107,7 +106,9 @@ BUILD:
 BONUS: 
 	mkdir -p  $(build_folder)
 	$(CC) -o $(build_folder)/checker $(SRC_GENERAL) $(SRC_BONUS)
-	echo "$(green)Built and deploy at $ \(mag) $(build_folder)/$(outfile)$(reset)";
+	echo "$(green)Built and deploy at $ \(mag) $(build_folder)/checker$(reset)";
+
+bonus : BONUS
 
 MERGETEST:
 	mkdir -p test_TEMP 
@@ -116,7 +117,6 @@ MERGETEST:
 	cp  \-R ./.test/* test_TEMP
 	rm test_TEMP/main.c
 	rm test_TEMP/utils/checker/checker.c
-
 
 GCOV: MERGETEST  
 	gcc -g3 -fprofile-arcs -ftest-coverage -O0 -o $(testbuild)/test.out test_TEMP/**/*.c test_TEMP/**/**/*.c test_TEMP/*.c
@@ -133,9 +133,6 @@ TEST_COVERAGE: MERGETEST GCOV
 RUN:
 	echo "$(green)Run $(mag) $(outfile)$(reset)"
 	./$(outfile)
-	
-
-BUILD_RUN: BUILD RUN
 
 clean: 
 	mkdir -p tmp_ && mv $(outfile) tmp_  
@@ -147,5 +144,4 @@ cleantest:
 
 LEAK: TEST
 	valgrind --leak-check=full --show-leak-kinds=all --verbose ./test/build/test.out
-
 
