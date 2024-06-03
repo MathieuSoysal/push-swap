@@ -113,7 +113,7 @@ MERGETEST:
 	mkdir -p test_TEMP 
 	mkdir -p $(testbuild) 
 	cp -R src/* test_TEMP 
-	cp  \-R test/* test_TEMP
+	cp  \-R ./.test/* test_TEMP
 	rm test_TEMP/main.c
 	rm test_TEMP/utils/checker/checker.c
 
