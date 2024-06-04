@@ -8,7 +8,7 @@ CC=gcc -g
 build_folder = build
 testbuild =  test/build
 src_folder = src
-outfile_name = pushswap
+outfile_name = push_swap
 outfile = $(build_folder)/$(outfile_name)
 
 green=`tput setaf 2; tput bold`
