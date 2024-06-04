@@ -6,7 +6,7 @@
 /*   By: hsoysal <hsoysal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/12 02:21:22 by hsoysal           #+#    #+#             */
-/*   Updated: 2024/05/21 10:04:46 by hsoysal          ###   ########.fr       */
+/*   Updated: 2024/06/04 13:44:11 by hsoysal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,6 +55,7 @@ static void	push_swap_sort_turkish1(t_push_swap_stacks *stacks)
 {
 	int	moves_in_a;
 	int	moves_in_b;
+	int	final_index;
 
 	while (stacks->a->size > 3)
 	{
@@ -70,6 +71,12 @@ static void	push_swap_sort_turkish1(t_push_swap_stacks *stacks)
 		interpret_moves(stacks, moves_in_a, 0);
 		pa(stacks);
 	}
+	final_index = push_swap_stack_find_min_index(stacks->a);
+	if (final_index > stacks->a->size - final_index)
+		interpret_moves_without_opti(stacks, rra, ra, final_index
+			- stacks->a->size);
+	else
+		interpret_moves_without_opti(stacks, ra, rra, final_index);
 	interpret_moves(stacks, push_swap_stack_find_min_index(stacks->a), 0);
 }
 
